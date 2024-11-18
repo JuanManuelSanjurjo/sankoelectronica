@@ -1,0 +1,119 @@
+---
+const isActive = (path) => {
+  return path === Astro.url.pathname;
+};
+---
+
+<nav class="navbar">
+	<nav class="navbar-content">
+    <a href="/">
+			<span class="text-gradient">Sanko Electronica</span>
+		</a>
+		<ul class="navbar-nav">
+			<li class="navbar-item">
+				<a href="/"  style={isActive("/") ? "color: var(--accent-light)" : ""}>Home</a>
+			</li>
+			<li class="navbar-item">
+				<a href="/about">About</a>
+			</li>
+			<li class="navbar-item">
+				<a href="/blog">Blog</a>
+			</li>
+		</ul>
+	</nav>
+  <button class="navbar-toggle" onclick="toggleNavbar()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  </button>
+</nav>
+
+<style>
+	.navbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0.75rem 1rem;
+	}
+   .navbar-nav{
+    display: flex;
+  }
+	.navbar-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.navbar-brand {
+		display: flex;
+		align-items: center;
+		font-size: 1.5rem;        
+	}
+	.navbar-brand img {
+		margin-right: 0.5rem;
+	}
+	.navbar-brand span {
+		font-weight: 700;
+	}
+	.navbar-item {
+		margin-left: 1rem;
+		padding: 0.5rem;
+		border-radius: 999px;
+		transition: background-color 0.2s ease, color 0.2s ease;
+	}
+	.navbar-item:hover {
+		background-color: var(--accent-light);
+		color: white;
+	}
+	.navbar-item:active {
+		background-color: var(--accent-dark);
+		color: white;
+  }
+  .navbar-toggle {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .navbar-content {
+      position: fixed;
+      inset: 0;
+      background-color: blue;
+      z-index: 10;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.2s ease;
+    }
+    .navbar-content-open {
+      transform: translateX(-100%);
+    }
+    .navbar-item {
+      margin: 0.5rem 0;
+    }
+    .navbar-toggle {
+      display: block;
+    }
+    .navbar-nav {
+      flex-direction: column;
+    }
+  }
+</style>
+
+
+<script>
+  // responsive navbar
+  const navbar = document.querySelector('.navbar');
+  const navbarContent = document.querySelector('.navbar-content');
+  const navItems = document.querySelectorAll('.navbar-item');
+  const windowWidth = window.innerWidth;
+  const btn = document.querySelector('.navbar-toggle');
+
+  function toggleNavbar() {
+    if (windowWidth < 768) {
+      // navbar.classList.toggle('navbar-open');
+      navbarContent.classList.toggle('navbar-content-open');
+    }
+  }
+
+  btn.addEventListener('click', toggleNavbar);
+  toggleNavbar();
+
+</script>
