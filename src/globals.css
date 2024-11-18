@@ -9,10 +9,6 @@
     white 60%
   );
 }
-html {
-  font-family: system-ui, sans-serif;
-  background: white;
-}
 /* open-sauce-sans-latin-400-normal */
 @font-face {
   font-family: "Open Sauce Sans";
@@ -25,7 +21,18 @@ html {
     url(@fontsource/open-sauce-sans/files/open-sauce-sans-latin-400-normal.woff)
       format("woff");
 }
-
+html,
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: system-ui, sans-serif;
+  background: white;
+}
 body {
   color: #13151a;
   font-family: "Open Sauce Sans", sans-serif;

@@ -5,7 +5,7 @@ const isActive = (path) => {
 ---
 
 <nav class="navbar">
-	<nav class="navbar-content">
+	<div class="navbar-content">
     <a href="/">
 			<span class="text-gradient">Sanko Electronica</span>
 		</a>
@@ -20,18 +20,20 @@ const isActive = (path) => {
 				<a href="/blog">Blog</a>
 			</li>
 		</ul>
-	</nav>
-  <button class="navbar-toggle" onclick="toggleNavbar()">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-  </button>
+	</div>
 </nav>
+<button class="navbar-toggle" onclick="toggleNavbar()">
+  &#9776;
+</button>
 
 <style>
 	.navbar {
 		display: flex;
-		align-items: center;
 		justify-content: space-between;
 		padding: 0.75rem 1rem;
+    background-color: black;
+    position: sticky;
+    top: 0;
 	}
    .navbar-nav{
     display: flex;
@@ -69,11 +71,11 @@ const isActive = (path) => {
   .navbar-toggle {
     display: none;
   }
+
   @media (max-width: 768px) {
-    .navbar-content {
+    .navbar {
       position: fixed;
       inset: 0;
-      background-color: blue;
       z-index: 10;
       padding: 1rem;
       display: flex;
@@ -82,7 +84,11 @@ const isActive = (path) => {
       align-items: center;
       transition: transform 0.2s ease;
     }
-    .navbar-content-open {
+    .navbar-content{
+      flex-direction: column;
+      gap: 2em;
+    }
+    .navbar-close {
       transform: translateX(-100%);
     }
     .navbar-item {
@@ -90,6 +96,15 @@ const isActive = (path) => {
     }
     .navbar-toggle {
       display: block;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      padding: 6px 9px;
+      z-index: 100;
+      color: white;
+      background-color: black;
+      border: 1px solid white;
+      border-radius: 5px
     }
     .navbar-nav {
       flex-direction: column;
@@ -98,22 +113,19 @@ const isActive = (path) => {
 </style>
 
 
-<script>
-  // responsive navbar
-  const navbar = document.querySelector('.navbar');
-  const navbarContent = document.querySelector('.navbar-content');
-  const navItems = document.querySelectorAll('.navbar-item');
-  const windowWidth = window.innerWidth;
-  const btn = document.querySelector('.navbar-toggle');
+ <script> 
+ document.addEventListener('astro:page-load', () => { 
+   const navbar = document.querySelector('.navbar'); 
+   const btn = document.querySelector('.navbar-toggle'); 
 
-  function toggleNavbar() {
-    if (windowWidth < 768) {
-      // navbar.classList.toggle('navbar-open');
-      navbarContent.classList.toggle('navbar-content-open');
-    }
-  }
+   function toggleNavbar() { 
+     navbar.classList.toggle('navbar-close'); 
+   } 
 
-  btn.addEventListener('click', toggleNavbar);
-  toggleNavbar();
+   btn.addEventListener('click', toggleNavbar); 
+   toggleNavbar();
+   }) 
+ </script> 
 
-</script>
+
+
