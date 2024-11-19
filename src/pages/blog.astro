@@ -4,10 +4,20 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Blog" color="var(--accent-yellow)">
 	<main>
-		<h1>Blog</h1>
-		<p class="instructions">
-      lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-		</p>
+    <section>
+      <div class="content">
+        <h1>Blog</h1>
+        <p class="instructions">
+          lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        </p>
+      </div>
+    </section>
 	</main>
 </Layout>
+
+<style define:vars={{ accentYellow: 'var(--accent-yellow)' }}>
+  h1 {
+    text-decoration: var(--accentYellow) underline;
+  }
+</style>
 

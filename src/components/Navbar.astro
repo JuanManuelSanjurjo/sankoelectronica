@@ -29,13 +29,12 @@ const isActive = (path) => {
 
 <style>
 	.navbar {
-		display: flex;
     position: sticky;
     top: 0;
     color: white;
     background-color: var(--black);
-		justify-content: space-between;
 		padding: 0.75rem 1rem;
+    z-index: 10;
 	}
    .navbar-nav{
     display: flex;
@@ -43,7 +42,6 @@ const isActive = (path) => {
 	.navbar-content {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
 	}
 	.navbar-brand {
 		display: flex;
@@ -74,7 +72,6 @@ const isActive = (path) => {
     .navbar {
       position: fixed;
       inset: 0;
-      z-index: 10;
       padding: 1rem;
       display: flex;
       flex-direction: column;
@@ -97,7 +94,7 @@ const isActive = (path) => {
     }
     .navbar-toggle {
       display: flex;
-      position: absolute;
+      position: fixed;
       align-items: end;
       right: 0;
       top: 5px;

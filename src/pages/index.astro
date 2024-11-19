@@ -4,10 +4,31 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Sanko Electronica" color="var(--accent-blue)">
 	<main>
-		<h1>Sanko Electronica</h1>
-		<p class="instructions">
-      lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-		</p>
+    <section>
+      <div class="content">
+        <h1>Sanko Electronica</h1>
+        <p class="instructions">
+          lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="content">
+        <h1>Sobre Nós</h1>
+        <p class="instructions">
+          lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        </p>
+      </div>
+    </section>
 	</main>
 </Layout>
+
+<style define:vars={{ accentBlue: 'var(--accent-blue)' }}>
+  h1 {
+    text-decoration: var(--accentBlue) underline;
+  }
+  section:nth-child(2) {
+    background-color: var(--accent-blue);
+  }
+</style>
 

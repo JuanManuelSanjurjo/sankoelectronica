@@ -10,7 +10,7 @@ const { title, color } = Astro.props;
 <!doctype html>
 <html lang="en">
   <CommonHead title={title} />
-	<body>
+  <body>
     <Navbar />
 		<slot />
     <Footer />
@@ -18,14 +18,3 @@ const { title, color } = Astro.props;
 	</body>
 </html>
 
-<style>
-  main {
-    padding: 2rem;
-    flex: 1;
-    display: flex;
-    max-width: 800px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-</style>
