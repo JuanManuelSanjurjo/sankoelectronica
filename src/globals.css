@@ -10,6 +10,12 @@
     rgb(var(--accent-light)) 30%,
     white 60%
   );
+  --h1: 4em;
+  --h2: 3em;
+  --h3: 2.5em;
+  --h4: 2em;
+  --h5: 1.5em;
+  --p: 1em;
 }
 /* open-sauce-sans-latin-400-normal */
 @font-face {
@@ -40,7 +46,10 @@ body {
   color: #13151a;
   font-family: "Open Sauce Sans", sans-serif;
 }
-
+a,
+p {
+  font-size: var(--p);
+}
 a {
   color: rgb(var(--accent));
   text-decoration: none;
@@ -59,4 +68,35 @@ main {
   margin: auto;
   padding: 2rem;
   margin-block: 2rem;
+}
+
+h1 {
+  font-size: var(--h1);
+}
+h2 {
+  font-size: var(--h2);
+}
+h3 {
+  font-size: var(--h3);
+}
+h4 {
+  font-size: var(--h4);
+}
+h5 {
+  font-size: var(--h5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
 }
