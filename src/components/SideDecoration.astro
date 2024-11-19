@@ -1,0 +1,18 @@
+---
+const { color } = Astro.props
+---
+
+<div class="side-decoration" >
+</div>
+
+<style define:vars={{ color }}>
+  .side-decoration {
+    position: absolute;
+    inset: 0;
+    width: 21px;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--color);
+    box-shadow: 0px 0 2px 2px var(--color);
+  }
+</style>

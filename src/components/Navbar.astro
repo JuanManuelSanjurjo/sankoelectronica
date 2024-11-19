@@ -9,15 +9,15 @@ const isActive = (path) => {
     <a href="/">
 			<span class="text-gradient">Sanko Electronica</span>
 		</a>
-		<ul class="navbar-nav">
-			<li class="navbar-item">
-				<a href="/"  style={isActive("/") ? "color: var(--accent-light)" : ""}>Home</a>
+    <ul class="navbar-nav" >
+			<li class="navbar-item" >
+				<a href="/"  style={isActive("/") ? "color: var(--accent-blue)" : ""}>Home</a>
 			</li>
 			<li class="navbar-item">
-				<a href="/about">About</a>
+				<a href="/about" style={isActive("/about") ? "color: var(--accent-red)" : ""}>About</a>
 			</li>
 			<li class="navbar-item">
-				<a href="/blog">Blog</a>
+				<a href="/blog"  style={isActive("/blog") ? "color: var(--accent-yellow)" : ""}>Blog</a>
 			</li>
 		</ul>
 	</div>
@@ -30,12 +30,12 @@ const isActive = (path) => {
 <style>
 	.navbar {
 		display: flex;
-    color: white;
-		justify-content: space-between;
-		padding: 0.75rem 1rem;
-    background-color: var(--black);
     position: sticky;
     top: 0;
+    color: white;
+    background-color: var(--black);
+		justify-content: space-between;
+		padding: 0.75rem 1rem;
 	}
    .navbar-nav{
     display: flex;
@@ -56,7 +56,6 @@ const isActive = (path) => {
 	.navbar-item {
 		margin-left: 1rem;
 		padding: 0.5rem;
-		border-radius: 999px;
 		transition: background-color 0.2s ease, color 0.2s ease;
 	}
 	.navbar-item:hover {
@@ -81,6 +80,8 @@ const isActive = (path) => {
       justify-content: center;
       align-items: center;
       transition: transform 0.2s ease;
+      background-color: #000000e6;
+      backdrop-filter: blur(10px);
     }
 
     .navbar-content{
@@ -100,11 +101,11 @@ const isActive = (path) => {
       right: 0;
       top: 5px;
       text-align: left;
-      padding: 6px 9px;
+      padding: 10px;
       z-index: 100;
       color: white;
       background-color: var(--black);
-      border: 1px solid gray;
+      border: none;
       border-radius: 8px 0 0 8px ;
       width: 50px;
       transition: all 0.2s ease;
