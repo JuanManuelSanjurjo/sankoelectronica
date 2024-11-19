@@ -1,7 +1,8 @@
 :root {
-  --accent: 136, 58, 234;
-  --accent-light: 224, 204, 250;
-  --accent-dark: 49, 10, 101;
+  --black: black;
+  --accent: #e6007a;
+  --accent-light: #f9a3c6;
+  --accent-dark: "#9e005d";
   --accent-gradient: linear-gradient(
     45deg,
     rgb(var(--accent)),
@@ -32,6 +33,7 @@ html,
 html {
   font-family: system-ui, sans-serif;
   background: white;
+  min-height: 100vh;
 }
 body {
   color: #13151a;
@@ -49,4 +51,11 @@ a:hover {
 ul {
   list-style: none;
   padding: 0;
+}
+
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  margin-block: 2rem;
 }

@@ -23,15 +23,17 @@ const isActive = (path) => {
 	</div>
 </nav>
 <button class="navbar-toggle" onclick="toggleNavbar()">
-  &#9776;
+  <span>&#9776; </span>
+  <span class="hidden-span">Sanko Electronica</span>
 </button>
 
 <style>
 	.navbar {
 		display: flex;
+    color: white;
 		justify-content: space-between;
 		padding: 0.75rem 1rem;
-    background-color: black;
+    background-color: var(--black);
     position: sticky;
     top: 0;
 	}
@@ -46,13 +48,10 @@ const isActive = (path) => {
 	.navbar-brand {
 		display: flex;
 		align-items: center;
-		font-size: 1.5rem;        
-	}
+    font-size: 1.5rem;
+  }
 	.navbar-brand img {
 		margin-right: 0.5rem;
-	}
-	.navbar-brand span {
-		font-weight: 700;
 	}
 	.navbar-item {
 		margin-left: 1rem;
@@ -61,7 +60,6 @@ const isActive = (path) => {
 		transition: background-color 0.2s ease, color 0.2s ease;
 	}
 	.navbar-item:hover {
-		background-color: var(--accent-light);
 		color: white;
 	}
 	.navbar-item:active {
@@ -84,6 +82,7 @@ const isActive = (path) => {
       align-items: center;
       transition: transform 0.2s ease;
     }
+
     .navbar-content{
       flex-direction: column;
       gap: 2em;
@@ -95,16 +94,37 @@ const isActive = (path) => {
       margin: 0.5rem 0;
     }
     .navbar-toggle {
-      display: block;
+      display: flex;
       position: absolute;
-      right: 5px;
+      align-items: end;
+      right: 0;
       top: 5px;
+      text-align: left;
       padding: 6px 9px;
       z-index: 100;
       color: white;
-      background-color: black;
-      border: 1px solid white;
-      border-radius: 5px
+      background-color: var(--black);
+      border: 1px solid gray;
+      border-radius: 8px 0 0 8px ;
+      width: 50px;
+      transition: all 0.2s ease;
+    }
+    .active{
+      width: 100%;
+    }
+    .navbar-toggle span:nth-child(1){
+      padding-inline: 0.5rem;
+    } 
+    .hidden-span{
+      display: none;
+      white-space: nowrap;
+      overflow: hidden;
+      opacity:0;
+    }
+    .hidden{
+      display: flex;
+      opacity: 1;
+      transition: opacity 0.8s ease;
     }
     .navbar-nav {
       flex-direction: column;
@@ -114,17 +134,30 @@ const isActive = (path) => {
 
 
  <script> 
- document.addEventListener('astro:page-load', () => { 
-   const navbar = document.querySelector('.navbar'); 
-   const btn = document.querySelector('.navbar-toggle'); 
+document.addEventListener('astro:page-load', () => {
+  const navbar = document.querySelector('.navbar');
+  const btn = document.querySelector('.navbar-toggle');
+  const hiddenSpan = document.querySelector('.hidden-span');
 
-   function toggleNavbar() { 
-     navbar.classList.toggle('navbar-close'); 
-   } 
+  function toggleNavbar() {
+    navbar.classList.toggle('navbar-close');
+    btn.classList.toggle('active');
+    hiddenSpan.classList.toggle('hidden');
+  }
 
-   btn.addEventListener('click', toggleNavbar); 
-   toggleNavbar();
-   }) 
+  // Inicializamos el estado del menú (cerrado) cuando la página se carga
+  navbar.classList.add('navbar-close');
+  btn.classList.remove('active');
+
+  // Escuchar el evento del botón para abrir y cerrar el menú
+  btn.addEventListener('click', toggleNavbar);
+
+  // Si la navegación cambia, cerramos el menú, popstate trabaja la pila de navegación
+  window.addEventListener('popstate', () => {
+    navbar.classList.add('navbar-close');
+    btn.classList.remove('active');
+  });
+})
  </script> 
 
 

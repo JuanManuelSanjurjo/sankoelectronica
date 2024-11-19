@@ -1,6 +1,7 @@
 ---
 import "../globals.css";
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 import CommonHead from '../components/CommonHead.astro';
 const { title } = Astro.props;
 ---
@@ -11,5 +12,18 @@ const { title } = Astro.props;
 	<body>
     <Navbar />
 		<slot />
+    <Footer />
 	</body>
 </html>
+
+<style>
+  main {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    max-width: 800px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
