@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Electronica Naval" color="var(--accent-yellow)">
+	<main>
+    <section>
+      <div class="content">
+        <h1>Electronica Naval</h1>
+        <p class="instructions">
+          lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        </p>
+      </div>
+    </section>
+	</main>
+</Layout>
+
+<style define:vars={{ accentYellow: 'var(--accent-yellow)' }}>
+  h1 {
+    text-decoration: var(--accentYellow) underline;
+  }
+</style>

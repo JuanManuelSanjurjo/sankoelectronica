@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Pesca de calamar" color="var(--accent-red)">
+	<main>
+    <section>
+      <div class="content">
+        <h1>Pesca de calamar</h1>
+        <p class="instructions">
+          lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        </p>
+      </div>
+    </section>
+	</main>
+</Layout>
+
+
+<style define:vars={{ accentRed: 'var(--accent-red)' }}>
+  h1 {
+    text-decoration: var(--accentRed) underline;
+  }
+</style>
+

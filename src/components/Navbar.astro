@@ -10,14 +10,17 @@ const isActive = (path) => {
 			<span class="text-gradient">Sanko Electronica</span>
 		</a>
     <ul class="navbar-nav" >
+      <li class="navbar-item">
+        <a href="/pesca-de-calamar"  style={isActive("/pesca-de-calamar") ? "color: var(--accent-yellow)" : ""}>Pesca de calamar</a>
+      </li>
+      <li class="navbar-item">
+        <a href="/embalajes"  style={isActive("/embalajes") ? "color: var(--accent-yellow)" : ""}>Embalajes</a>
+      </li>
+      <li class="navbar-item">
+        <a href="/electronica-naval" style={isActive("/electronica-naval") ? "color: var(--accent-red)" : ""}>Electronica naval</a>
+      </li>
 			<li class="navbar-item" >
-				<a href="/"  style={isActive("/") ? "color: var(--accent-blue)" : ""}>Home</a>
-			</li>
-			<li class="navbar-item">
-				<a href="/about" style={isActive("/about") ? "color: var(--accent-red)" : ""}>About</a>
-			</li>
-			<li class="navbar-item">
-				<a href="/blog"  style={isActive("/blog") ? "color: var(--accent-yellow)" : ""}>Blog</a>
+				<a href="/girocompases-y-autopilotos"  style={isActive("/girocompases-y-autopilotos") ? "color: var(--accent-blue)" : ""}>Giro Compases y Autopilotos</a>
 			</li>
 		</ul>
 	</div>
