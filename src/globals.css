@@ -1,10 +1,10 @@
 :root {
   --black: #13151a;
-  /* --frame: #002063; */
-  --frame: #094a9e;
+  --frame: #002063;
   --accent: #e6007a;
   --accent-blue: #026ee0;
   --accent-red: #9e005d;
+  --accent-green: #00b16a;
   --accent-yellow: #dbb700;
   --accent-gradient: linear-gradient(
     45deg,
@@ -104,6 +104,9 @@ ul {
 @media (max-width: 768px) {
   body {
     font-size: 14px;
+  }
+  h1 {
+    font-size: 3em;
   }
   .content {
     max-width: 300px;
