@@ -204,11 +204,8 @@ document.addEventListener('astro:page-load', () => {
   const links = document.querySelectorAll('.navbar-nav a');
 
   links.forEach((link) => {
-    const linkPathname = new URL(link.href, window.location.origin).pathname + "/";
-    console.log("Path", linkPathname)
-    console.log("Window path", window.location.pathname)
-    console.log("Origin", window.location.origin)
-    if (linkPathname === window.location.pathname && window.location.pathname !== "/") {
+    const path = new URL(link.href, window.location.origin).pathname + "/";
+    if (path === window.location.pathname && window.location.pathname !== "/") {
       link.classList.add('active');
     }else {
       link.classList.remove('active');
