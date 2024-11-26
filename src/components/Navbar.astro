@@ -202,11 +202,12 @@ document.addEventListener('astro:page-load', () => {
   const btn = document.querySelector('.navbar-toggle');
   const hiddenSpan = document.querySelector('.hidden-span');
   const links = document.querySelectorAll('.navbar-nav a');
-
   links.forEach((link) => {
-    if (link.href.endsWith(window.location.pathname)) {
+    if (link.href.includes(window.location.pathname) && window.location.pathname !== "/") {
       link.classList.add('active');
     }else {
+      console.log(window.location.pathname);
+      console.log(link.href);
       link.classList.remove('active');
     }
   });
