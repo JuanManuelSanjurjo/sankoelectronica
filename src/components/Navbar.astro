@@ -103,21 +103,17 @@ const isActive = (path) => {
 	.navbar-item {
 		margin-left: 1rem;
 		padding: 0.5rem;
-		transition: background-color 0.2s ease, color 0.2s ease;
+		transition:  0.2s ease, color 0.2s ease;
 	}
 	.navbar-item:hover {
 		color: white;
 	}
-	.navbar-item:active {
-		background-color: var(--accent-dark);
-		color: white;
-  }
   .navbar-toggle {
     display: none;
     box-shadow: 0 0 6px -3px white;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1150px) {
     .navbar {
       position: fixed;
       inset: 0;

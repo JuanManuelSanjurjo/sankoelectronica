@@ -1,15 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import sq800 from '../assets/images/strapaq-SQ-800.jpg';
+import strapaqlogo from '../assets/images/Strapack-Logo.png';
 ---
 
 <Layout title="Embalajes" color="var(--accent-yellow)">
 	<main>
     <section>
       <div class="content">
-        <h1>Embalajes</h1>
+        <div class="flex">
+          <h1>Embalajes</h1>
+        </div>
         <p class="instructions">
           lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         </p>
+        <div class="content content-cards">
+           <div class="equipo">
+            <div class="flex">
+              <h4>SQ-800 </h4>
+              <Image style={{backgroundColor: "white", borderRadius: "5px"}} src={strapaqlogo} alt="Strapaq" width="200px" height="auto" />
+            </div>
+            <p>AUTOMATIC STRAPPING MACHINE</p>
+            <div>
+              <Image  src={sq800} alt="sq800" width="200px" height="auto" />
+              <p>ntroducing StraPack’s new line of strapping machine, the SQ-800 with brushless DC motor. The SQ-800 provides better efficiency without compromising the reliability of the legendary RQ-8x.
+                  Standard strapping rate is 55 straps/min, even when tension is applied. The machine is ready to operate in less than 25 seconds, contributing to increased packaging line efficiencies.
+                  The SQ-800 offers different modes of tensioning system which can be selected according to the application requirements. A wide range of tension is available via a digitally controlled tension dial.  Tension capability is up to 80kgf or 176lbf (equivalent of 150mm or 6” stroke). Unlike many other machines in the market, tension does not compromise the cycle speed.</p>
+            </div>
+            <a class="button" href="mailto:info@sankoelectronica.com">Contactar</a>
+          </div>
+        </div>
       </div>
     </section>
 	</main>
@@ -19,5 +41,53 @@ import Layout from '../layouts/Layout.astro';
   h1 {
     text-decoration: var(--accentYellow) underline;
   }
+  h2, h4, h5{
+    margin-block: 2rem;
+  }
+  h5{
+    border-bottom: 1px solid white;
+  }
+  .flex {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .box .flex div img{
+    margin: 0;
+  }
+  .content-cards {
+    display: flex;
+    flex-direction: column;
+    margin-block: 4rem;
+    gap: 2rem;
+  }
+  .equipo  {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 5px;
+    /* background-color: var(--frame); */
+  }
+  .equipo div{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .box {
+    border: 1px solid white;
+    padding: 4rem 2rem;
+    min-height: 500px;
+  }
+  @media (max-width: 1150px) {
+    .flex, .equipo div {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .box {
+      padding: 2rem;
+      min-height: unset;
+    }
+   
 </style>
 

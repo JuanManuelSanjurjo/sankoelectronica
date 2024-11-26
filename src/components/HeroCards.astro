@@ -3,21 +3,25 @@ import {Image} from 'astro:assets';
 const { image, alt, href } = Astro.props;
 
 ---
-<div class="hero-card-container">
-  <a href={href} class="hero-card">
+<a href={href} class="hero-card-container glass">
+  <div class="hero-card">
     <Image class="image" src={image} alt={alt} width="190px" height="190px" />
-  </a>  
+  </div>  
   <h4>{alt}</h4>
-</div>
+</a>
 
 <style>
   .hero-card-container {
+    box-shadow: 0px 0px 2px 2px var(--black);
+    padding: 2rem;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     gap: 1rem;
+    text-decoration: none;
   }
  .hero-card {
     display: flex;
@@ -47,7 +51,11 @@ const { image, alt, href } = Astro.props;
     position: relative;
     height: 100px;
     display: flex;
-    background-color: rgba(0,0,0, 0.3);
+    justify-content: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    background: rgba(0,0,0, 0.3);
     align-items: center;
     min-height: 100px;
     color: white;
@@ -64,7 +72,7 @@ const { image, alt, href } = Astro.props;
     transform: scaleX(0);
     transform-origin: left;
     background-color: var(--accent-blue);
-    transition: 0.2s  cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition:  0.2s  cubic-bezier(0.455, 0.03, 0.515, 0.955);
     z-index: -1;
   }
   .hero-card-container:hover h4::before { 
@@ -74,6 +82,14 @@ const { image, alt, href } = Astro.props;
   @media (max-width: 1345px) {
     h4::before{
     transform: scaleX(1);
+    }
+    .hero-card-container {
+      padding: 1rem;
+      gap: 1rem;
+    }
+    image {
+      width: 160px; /* Ancho de la imagen */
+      height: 160px; /* Altura de la imagen */
     }
   }
 </style>
