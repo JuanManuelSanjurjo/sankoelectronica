@@ -5,5 +5,6 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   base: "/",
+  site: "https://sanko-electronica.ntelift.app",
   integrations: [react()],
 });
