@@ -205,7 +205,7 @@ document.addEventListener('astro:page-load', () => {
 
   links.forEach((link) => {
     const path = new URL(link.href, window.location.origin).pathname + "/";
-    if (path === window.location.pathname && window.location.pathname !== "/") {
+    if (path.includes(window.location.pathname) && window.location.pathname !== "/") {
       link.classList.add('active');
     }else {
       link.classList.remove('active');

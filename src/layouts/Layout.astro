@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import CommonHead from '../components/CommonHead.astro';
 import SideDecoration from '../components/SideDecoration.astro';
+import Whatsapp from '../components/Whatsapp.astro';
 const { title, color } = Astro.props;
 ---
 
@@ -15,6 +16,7 @@ const { title, color } = Astro.props;
 		<slot />
     <Footer />
     <SideDecoration color={color} />
+    <Whatsapp />
 	</body>
 </html>
 

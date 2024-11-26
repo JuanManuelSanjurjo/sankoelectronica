@@ -12,9 +12,9 @@ const { image, alt, href } = Astro.props;
 
 <style>
   .hero-card-container {
-    box-shadow: 0px 0px 2px 2px var(--black);
-    padding: 2rem;
+    box-shadow: 0px 0px 2px 1px var(--black);
     border-radius: 10px;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,24 +28,24 @@ const { image, alt, href } = Astro.props;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    border-radius: 50%; /* Hace que el contenedor sea circular */
-    background-color: white; /* Color del círculo */
-    width: 275px; /* Ancho del círculo */
-    height: 275px; /* Altura del círculo (igual al ancho para mantenerlo circular) */
+    border-radius: 50%;
+    background-color: white; 
+    width: 275px;
+    height: 275px;
     transition: all 0.4s ease-in-out, box-shadow 0.2s ease-in-out;
   }
 
   .image {
-    padding: 10px; /* Espaciado interno entre la imagen y el borde del círculo */
-    object-fit: contain; /* Asegura que la imagen se ajuste correctamente */
-    width: 190px; /* Ancho de la imagen */
-    height: 190px; /* Altura de la imagen */
+    padding: 10px; 
+    object-fit: contain; 
+    width: 190px; 
+    height: 190px; 
   }
 
   .hero-card:hover  {
-    transform: scale(1.05); /* Amplía ligeramente la imagen */
-    filter: brightness(1.1); /* Oscurece la imagen */
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5); /* Agrega un efecto de sombra */
+    transform: scale(1.05); 
+    filter: brightness(1.1); 
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5);
   }
   h4{
     position: relative;
@@ -88,8 +88,8 @@ const { image, alt, href } = Astro.props;
       gap: 1rem;
     }
     image {
-      width: 160px; /* Ancho de la imagen */
-      height: 160px; /* Altura de la imagen */
+      width: 160px; 
+      height: 160px; 
     }
   }
 </style>
