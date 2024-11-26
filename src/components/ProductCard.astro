@@ -36,6 +36,12 @@ const { title, image, alt, subject, style } = Astro.props;
     align-items: center;
     gap: 2rem;
   }
+  @media (max-width: 1150px) {
+    .flex, .equipo div {
+      flex-direction: column;
+      gap: 1rem;
+    }
 
+} 
 </style>
 
