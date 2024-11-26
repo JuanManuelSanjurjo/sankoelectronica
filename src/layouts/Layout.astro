@@ -11,7 +11,7 @@ const { title, color } = Astro.props;
 <html lang="en">
   <CommonHead title={title} />
   <body>
-    <Navbar client:load />
+    <Navbar />
 		<slot />
     <Footer />
     <SideDecoration color={color} />
