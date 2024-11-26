@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+const { title, image, alt, subject, style } = Astro.props;
+---
+
+<div class={`equipo ${style}`}>
+  <h4>{title}</h4>
+  <div>
+    <Image  src={image} alt={alt} width="200px" height="auto" />
+    <p>A new version of the squid fishing machine with the popular crystal control panel and increased functionality.
+      It is a simple fishing machine with its focus firmly on functionality.</p>
+  </div>
+  <a class="button" href={`mailto:info@sankoelectronica.com?subject=${subject}`}>Contactar</a>
+</div>
+
+
+<style >
+  h4{
+    margin-block: 2rem;
+  }
+  div img{
+    margin: 0;
+  }
+  .equipo  {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+  }
+  .full {
+    border-radius: 5px;
+    background-color: var(--frame);
+  }
+  .equipo div{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+</style>
+

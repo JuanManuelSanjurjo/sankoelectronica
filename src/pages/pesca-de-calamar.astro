@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
 import { Image } from 'astro:assets';
 import hamade from '../assets/images/hamade-my8.jpg';
 import hamadelogo from '../assets/images/hamade-logo.png';
@@ -20,24 +21,8 @@ import hamadelogo from '../assets/images/hamade-logo.png';
           <h2>Equipos</h2>
           <Image  src={hamadelogo} alt="Hamade" width="200px" height="auto" />
         </div>
-        <div class="equipo">
-          <h4>MY-8</h4>
-          <div>
-            <Image  src={hamade} alt="my-8" width="200px" height="auto" />
-            <p>A new version of the squid fishing machine with the popular crystal control panel and increased functionality.
-              It is a simple fishing machine with its focus firmly on functionality.</p>
-          </div>
-          <a class="button" href="mailto:info@sankoelectronica.com">Contactar</a>
-        </div>
-        <div class="equipo">
-          <h4>MY-8</h4>
-          <div>
-            <Image  src={hamade} alt="Hamade" width="200px" height="auto" />
-            <p>A new version of the squid fishing machine with the popular crystal control panel and increased functionality.
-              It is a simple fishing machine with its focus firmly on functionality.</p>
-          </div>
-          <a class="button" href="mailto:info@sankoelectronica.com">Contactar</a>
-        </div>
+        <ProductCard style="full" title="MY-8" image={hamade} alt="my-8" subject="Hamade MY-8" />
+        <ProductCard style="full" title="MY-18" image={hamade} alt="my-8" subject="Hamade MY-8" />
       </div>
 
     </section>
@@ -47,16 +32,9 @@ import hamadelogo from '../assets/images/hamade-logo.png';
         <div class="box">
           <p>Available in two types of HAMADE's original drums to meet customer needs.</p>
           <div class="flex">
-            <div >
-              <h5>Round Shape</h5>
-              <Image  src={hamade} alt="Hamade" width="200px" height="auto" />
-              <p>Less line slack and quick and smooth raising/lowering of the drum.
-            </div>
-            <div>
               <h5>Diamon Shape</h5>
               <Image  src={hamade} alt="Hamade" width="200px" height="auto" />
               <p>A standard and common drum shape that allows for rhythmic up/down.
-            </div>
           </div>
         </div>
         <div >
@@ -83,7 +61,7 @@ import hamadelogo from '../assets/images/hamade-logo.png';
 </Layout>
 
 
-<style define:vars={{ accentRed: 'var(--accent-red)' }}>
+<style >
   h1 {
     text-decoration: var(--accentRed) underline;
   }
@@ -92,14 +70,16 @@ import hamadelogo from '../assets/images/hamade-logo.png';
   }
   h5{
     border-bottom: 1px solid white;
+    padding-bottom: 0.6rem;
   }
   .flex {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 2rem;
   }
-  .box .flex div img{
+  .box .flex img{
     margin: 0;
+    align-self: center;
   }
   .content-cards {
     display: flex;
@@ -134,6 +114,6 @@ import hamadelogo from '../assets/images/hamade-logo.png';
       padding: 2rem;
       min-height: unset;
     }
-   
+} 
 </style>
 

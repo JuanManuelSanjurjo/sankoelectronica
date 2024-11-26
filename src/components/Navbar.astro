@@ -1,10 +1,7 @@
 ---
 import {Image} from 'astro:assets';
 import logosanko from '../assets/images/sanko-logo-blanco.png';
-const isActive = (path) => {
-  return path === Astro.url.pathname;
-};
-const path = Astro.url.pathname;
+
 ---
 
 <nav class="navbar" }>
@@ -22,16 +19,16 @@ const path = Astro.url.pathname;
 		</a>
     <ul class="navbar-nav" >
       <li class="navbar-item">
-        <a href="/pesca-de-calamar"  style={path === "/pesca-de-calamar" ? "color: var(--accent-red)" : ""}>Pesca de calamar</a>
+        <a class="link1"  href="/pesca-de-calamar"  >Pesca de calamar</a>
       </li>
       <li class="navbar-item">
-        <a href="/embalajes"  style={isActive("/embalajes") ? "color: var(--accent-yellow)" : ""}>Embalajes</a>
+        <a class="link2"  href="/embalajes"  >Embalajes</a>
       </li>
       <li class="navbar-item">
-        <a href="/electronica-naval" style={isActive("/electronica-naval") ? "color: var(--accent-green)" : ""}>Electronica naval</a>
+        <a class="link3"  href="/electronica-naval" >Electronica naval</a>
       </li>
 			<li class="navbar-item" >
-				<a href="/girocompases-y-autopilotos"  style={isActive("/girocompases-y-autopilotos") ? "color: var(--accent-blue)" : ""}>Giro Compases y Autopilotos</a>
+				<a class="link4"  href="/girocompases-y-autopilotos"  >Giro Compases y Autopilotos</a>
 			</li>
 		</ul>
     <div class="language">EN | ES</div>
@@ -105,7 +102,22 @@ const path = Astro.url.pathname;
 		margin-left: 1rem;
 		padding: 0.5rem;
 		transition:  0.2s ease, color 0.2s ease;
-	}
+  }
+  a:not(.active) {
+    color: white;
+  }
+  .link1.active {
+    color: var(--accent-red);
+  }
+  .link2.active {
+    color: var(--accent-yellow);
+  }
+  .link3.active {
+    color: var(--accent-green);
+  }
+  .link4.active {
+    color: var(--accent-blue);
+  }
 	.navbar-item:hover {
 		color: white;
 	}
@@ -184,11 +196,20 @@ const path = Astro.url.pathname;
 </style>
 
 
- <script> 
+ <script > 
 document.addEventListener('astro:page-load', () => {
   const navbar = document.querySelector('.navbar');
   const btn = document.querySelector('.navbar-toggle');
   const hiddenSpan = document.querySelector('.hidden-span');
+  const links = document.querySelectorAll('.navbar-nav a');
+
+  links.forEach((link) => {
+    if (link.href.endsWith(window.location.pathname)) {
+      link.classList.add('active');
+    }else {
+      link.classList.remove('active');
+    }
+  });
 
   function toggleNavbar() {
     navbar.classList.toggle('navbar-close');
@@ -199,6 +220,7 @@ document.addEventListener('astro:page-load', () => {
   // Inicializamos el estado del menú (cerrado) cuando la página se carga
   navbar.classList.add('navbar-close');
   btn.classList.remove('active');
+
 
   // Escuchar el evento del botón para abrir y cerrar el menú
   btn.addEventListener('click', toggleNavbar);
@@ -212,4 +234,5 @@ document.addEventListener('astro:page-load', () => {
  </script> 
 
 
-
+<script client:load>
+</script>
