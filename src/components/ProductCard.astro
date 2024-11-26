@@ -6,7 +6,7 @@ const { title, image, alt, subject, style } = Astro.props;
 <div class={`equipo ${style}`}>
   <h4>{title}</h4>
   <div>
-    <Image src={image} alt={alt} width="200px" height="auto" />
+    <Image transition:name={alt} src={image} alt={alt} width="200px" height="auto" />
     <slot/>
   </div>
   <a class="button" href={`mailto:info@sankoelectronica.com?subject=${subject}`}>Contactar</a>

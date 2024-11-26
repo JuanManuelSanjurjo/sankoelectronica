@@ -5,7 +5,7 @@ const { image, alt, href } = Astro.props;
 ---
 <a href={href} class="hero-card-container glass">
   <div class="hero-card">
-    <Image class="image" src={image} alt={alt} width="190px" height="190px" />
+    <Image transition:name={alt} class="image" src={image} alt={alt} width="190px" height="190px" />
   </div>  
   <h4>{alt}</h4>
 </a>
