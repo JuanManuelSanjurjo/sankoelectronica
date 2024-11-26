@@ -1,0 +1,46 @@
+h1 {
+  text-decoration: var(--accent-red) underline;
+}
+h2,
+h4,
+h5 {
+  margin-block: 2rem;
+}
+h5 {
+  border-bottom: 1px solid white;
+  padding-bottom: 0.6rem;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.column {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.box .flex img {
+  margin: 0;
+  align-self: center;
+}
+.content-cards {
+  display: flex;
+  flex-direction: column;
+  margin-block: 4rem;
+  gap: 2rem;
+}
+
+.box {
+  border: 1px solid white;
+  padding: 4rem 2rem;
+  min-height: 500px;
+}
+@media (max-width: 1150px) {
+  .flex {
+    flex-direction: column;
+  }
+  .box {
+    padding: 2rem;
+    min-height: unset;
+  }
+}

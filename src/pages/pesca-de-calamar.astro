@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ProductCard from '../components/ProductCard.astro';
 import { Image } from 'astro:assets';
+import "./pageStyles.css";
 import hamade from '../assets/images/hamade-my8.jpg';
 import hamadelogo from '../assets/images/hamade-logo.png';
 ---
@@ -21,8 +22,22 @@ import hamadelogo from '../assets/images/hamade-logo.png';
           <h2>Equipos</h2>
           <Image  src={hamadelogo} alt="Hamade" width="200px" height="auto" />
         </div>
-        <ProductCard style="full" title="MY-8" image={hamade} alt="my-8" subject="Hamade MY-8" />
-        <ProductCard style="full" title="MY-18" image={hamade} alt="my-8" subject="Hamade MY-8" />
+        <ProductCard style="full" title="MY-8" image={hamade} alt="my-8" subject="Hamade MY-8 (web)">
+          <p> lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          </p>
+        </ProductCard>
+        <ProductCard style="full" title="MY-18" image={hamade} alt="my-18" subject="Hamade MY-18 (web)">
+          <p> lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          </p>
+        </ProductCard>
+        <ProductCard style="full" title="MY-8" image={hamade} alt="my-8" subject="Hamade MY-8">
+          <p> lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          </p>
+        </ProductCard>
+
       </div>
 
     </section>
@@ -61,60 +76,4 @@ import hamadelogo from '../assets/images/hamade-logo.png';
 </Layout>
 
 
-<style >
-  h1 {
-    text-decoration: var(--accent-red) underline;
-  }
-  h2, h4, h5{
-    margin-block: 2rem;
-  }
-  h5{
-    border-bottom: 1px solid white;
-    padding-bottom: 0.6rem;
-  }
-  .flex {
-    display: flex;
-    gap: 2rem;
-  }
-  .column {
-    flex-direction: column;
-  }
-  .box .flex img{
-    margin: 0;
-    align-self: center;
-  }
-  .content-cards {
-    display: flex;
-    flex-direction: column;
-    margin-block: 4rem;
-    gap: 2rem;
-  }
-  .equipo  {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 2rem;
-    border-radius: 5px;
-    background-color: var(--frame);
-  }
-  .equipo div{
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-  .box {
-    border: 1px solid white;
-    padding: 4rem 2rem;
-    min-height: 500px;
-  }
-  @media (max-width: 1150px) {
-  .flex {
-      flex-direction: column;
-    }
-  .box {
-    padding: 2rem;
-    min-height: unset;
-  }
-} 
-</style>
 

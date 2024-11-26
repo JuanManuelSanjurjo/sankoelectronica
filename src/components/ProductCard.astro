@@ -6,9 +6,8 @@ const { title, image, alt, subject, style } = Astro.props;
 <div class={`equipo ${style}`}>
   <h4>{title}</h4>
   <div>
-    <Image  src={image} alt={alt} width="200px" height="auto" />
-    <p>A new version of the squid fishing machine with the popular crystal control panel and increased functionality.
-      It is a simple fishing machine with its focus firmly on functionality.</p>
+    <Image src={image} alt={alt} width="200px" height="auto" />
+    <slot/>
   </div>
   <a class="button" href={`mailto:info@sankoelectronica.com?subject=${subject}`}>Contactar</a>
 </div>

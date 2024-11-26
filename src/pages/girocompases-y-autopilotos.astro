@@ -1,8 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import ProductCard from '../components/ProductCard.astro';
+import "./pageStyles.css";
+import tokyoKeiki from '../assets/images/tokyo-keiki.webp';
+import autopiloto from '../assets/images/autopiloto.jpg';
+import girocompas from '../assets/images/girocompas.jpg';
 ---
 
-<Layout title="Giro Compases y Autopilotos" color="var(--accent-blue)">
+<Layout title="Girocompases y Autopilotos" color="var(--accent-blue)">
 	<main>
     <section>
       <div class="content">
@@ -11,12 +17,23 @@ import Layout from '../layouts/Layout.astro';
           lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         </p>
       </div>
+      <div class="content content-cards">
+        <div class="flex">
+          <h2>Equipos</h2>
+          <Image  src={tokyoKeiki} alt="Hamade" width="200px" height="auto" />
+        </div>
+        <ProductCard style="full" title="MY-8" image={autopiloto} alt="my-8" subject="Hamade MY-8">
+          <p> lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          </p>
+        </ProductCard>
+        <ProductCard style="full" title="MY-8" image={girocompas} alt="my-8" subject="Hamade MY-8">
+          <p> lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          </p>
+        </ProductCard>
+      </div>
     </section>
 	</main>
 </Layout>
 
-<style >
-  h1 {
-    text-decoration: var(--accent-blue) underline;
-  }
-</style>
