@@ -4,6 +4,7 @@ import logosanko from '../assets/images/sanko-logo-blanco.png';
 const isActive = (path) => {
   return path === Astro.url.pathname;
 };
+const path = Astro.url.pathname;
 ---
 
 <nav class="navbar" }>
@@ -21,7 +22,7 @@ const isActive = (path) => {
 		</a>
     <ul class="navbar-nav" >
       <li class="navbar-item">
-        <a href="/pesca-de-calamar"  style={isActive("/pesca-de-calamar") ? "color: var(--accent-red)" : ""}>Pesca de calamar</a>
+        <a href="/pesca-de-calamar"  style={path === "/pesca-de-calamar" ? "color: var(--accent-red)" : ""}>Pesca de calamar</a>
       </li>
       <li class="navbar-item">
         <a href="/embalajes"  style={isActive("/embalajes") ? "color: var(--accent-yellow)" : ""}>Embalajes</a>
