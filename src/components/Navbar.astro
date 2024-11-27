@@ -19,16 +19,16 @@ const { color } = Astro.props;
 		</a>
     <ul class="navbar-nav" >
       <li class="navbar-item">
-        <a class="link1"  href="/pesca-de-calamar"  >Pesca de calamar</a>
+        <a href="/pesca-de-calamar"  >Pesca de calamar</a>
       </li>
       <li class="navbar-item">
-        <a class="link2"  href="/embalajes"  >Embalajes</a>
+        <a href="/embalajes"  >Embalajes</a>
       </li>
       <li class="navbar-item">
-        <a class="link3"  href="/electronica-naval" >Electronica naval</a>
+        <a  href="/electronica-naval" >Electronica naval</a>
       </li>
 			<li class="navbar-item" >
-				<a class="link4"  href="/girocompases-y-autopilotos"  >Girocompases y Autopilotos</a>
+				<a  href="/girocompases-y-autopilotos"  >Girocompases y Autopilotos</a>
 			</li>
 		</ul>
     <div class="language">EN | ES</div>
@@ -109,24 +109,13 @@ const { color } = Astro.props;
   a.active {
     color: var(--color);
   }
-  /* .link1.active { */
-  /*   color: var(--accent-red); */
-  /* } */
-  /* .link2.active { */
-  /*   color: var(--accent-yellow); */
-  /* } */
-  /* .link3.active { */
-  /*   color: var(--accent-green); */
-  /* } */
-  /* .link4.active { */
-  /*   color: var(--accent-blue); */
-  /* } */
 	.navbar-item:hover {
 		color: white;
 	}
   .navbar-toggle {
     display: none;
-    box-shadow: 0 0 6px -3px white;
+    box-shadow: 0 0 6px -4px white;
+    background-color: #000000e8;
   }
 
   @media (max-width: 1150px) {
@@ -169,7 +158,6 @@ const { color } = Astro.props;
       padding: 10px;
       z-index: 100;
       color: white;
-      background-color: var(--black);
       border: none;
       border-radius: 8px 0 0 8px ;
       width: 50px;

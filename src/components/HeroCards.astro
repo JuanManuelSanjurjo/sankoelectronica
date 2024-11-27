@@ -32,7 +32,7 @@ const { image, alt, href } = Astro.props;
     background-color: white; 
     width: 275px;
     height: 275px;
-    transition: all 0.4s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   }
 
   .image {
@@ -42,9 +42,9 @@ const { image, alt, href } = Astro.props;
     height: 190px; 
   }
 
-  .hero-card:hover  {
-    transform: scale(1.05); 
-    filter: brightness(1.1); 
+  .hero-card-container:hover .hero-card {
+    transform: scale(1.04);
+    filter: brightness(1.1);
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5);
   }
   h4{

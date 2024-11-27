@@ -2,22 +2,28 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import HeroCards from '../components/HeroCards.astro';
+import ButtonNav from '../components/ButtonNav.astro';
 import hamade from '../assets/images/hamade-my8.jpg';
 import stapak from "../assets/images/strapaq-SQ-800.jpg"
 import koden from "../assets/images/radar.jpg"
 import autopiloto from "../assets/images/autopiloto.jpg"
 import logosanko from '../assets/images/sanko-logo-blanco.png';
+
+const sections = [
+  { id: 'business', name: 'Business' },
+  { id: 'about', name: 'About' },
+  { id: 'partners', name: 'Partners' },
+];
 ---
 
 <Layout title="Sanko Electronica" >
+  <ButtonNav sections={sections} />
 	<main>
-    <section >
-      <a href="#about">
-        <h1 >
+    <section id="business">
+        <h1 class="glass">
           <Image class="logo" src={logosanko} alt="logo sanko electrica" width="180px" height="auto" />
           <span>Sanko Electronica</span>
         </h1>
-      </a>
       <div class="hero-cards">
         <HeroCards image={hamade} alt="Pesca de calamar" href="/pesca-de-calamar" />
         <HeroCards image={stapak} alt="Embalajes" href="/embalajes" />
@@ -36,7 +42,7 @@ import logosanko from '../assets/images/sanko-logo-blanco.png';
         </p>
       </div>
     </section>
-    <section>
+    <section id="partners">
       <div class="content">
         <h1>Quienes confian en nosotros</h1>
         <p class="glass">

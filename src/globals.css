@@ -124,7 +124,7 @@ ul {
   align-self: flex-end;
 }
 .glass {
-  background-color: color-mix(in oklab, var(--black) 29%, transparent 0%);
+  background-color: color-mix(in hsl, var(--black) 29%, transparent 0%);
   backdrop-filter: blur(10px);
 }
 @media (max-width: 768px) {
