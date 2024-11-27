@@ -5,9 +5,11 @@ import { Image } from 'astro:assets';
 import "./pageStyles.css";
 import sq800 from '../assets/images/strapaq-SQ-800.jpg';
 import strapaqlogo from '../assets/images/Strapack-Logo.png';
+
+const tags = ['sanko', 'electronica', 'naval', 'mar del plata', 'strapaq', 'sq800'];
 ---
 
-<Layout title="Embalajes" color="var(--accent-yellow)">
+<Layout title="Embalajes" description="Embalajes" tags={tags} color="var(--accent-yellow)">
 	<main>
     <section>
       <div class="content">
@@ -23,7 +25,7 @@ import strapaqlogo from '../assets/images/Strapack-Logo.png';
           <h2>Equipos</h2>
           <Image  src={strapaqlogo} style={{backgroundColor: "white", borderRadius: "5px"}} alt="Strapaq" width="200px" height="auto" />
         </div>
-        <ProductCard style="full" color="var(--accent-yellow)" title="MY-8" image={sq800} alt="Strapaq" subject="Strapaq sq800 (web)">
+        <ProductCard style="full" color="var(--accent-yellow)" title="SQ-800" image={sq800} alt="Strapaq" subject="Strapaq sq800 (web)">
           <p> lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
               lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
           </p>

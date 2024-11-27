@@ -14,9 +14,10 @@ const sections = [
   { id: 'about', name: 'About' },
   { id: 'partners', name: 'Partners' },
 ];
+const tags = ['sanko', 'electronica', 'naval', 'embalajes', 'girocompas', 'mar del plata', 'autopiloto', 'radar', 'sonar','sq800', 'pesca', 'calamar'];
 ---
 
-<Layout title="Sanko Electronica" >
+<Layout title="Sanko Electronica" description="Inicio Sanko Electronica" tags={tags}>
   <ButtonNav sections={sections} />
 	<main>
     <section id="business">
@@ -93,7 +94,7 @@ const sections = [
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 4rem;
-    padding-block:4rem;
+    padding:4rem 2rem;
   }
   @media (max-width: 1345px) {
     .hero-cards {

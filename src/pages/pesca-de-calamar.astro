@@ -5,9 +5,11 @@ import { Image } from 'astro:assets';
 import "./pageStyles.css";
 import hamade from '../assets/images/hamade-my8.jpg';
 import hamadelogo from '../assets/images/hamade-logo.png';
+
+const tags = ['sanko', 'girocompas', 'mar del plata', 'hamade', 'calamar', 'my-8', 'my-18'];
 ---
 
-<Layout title="Pesca de calamar" color="var(--accent-red)">
+<Layout title="Pesca de calamar" description="Pesca de calamar" tags={tags} color="var(--accent-red)">
 	<main>
     <section>
       <div class="content">
