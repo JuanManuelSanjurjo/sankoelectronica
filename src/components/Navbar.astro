@@ -1,7 +1,7 @@
 ---
 import {Image} from 'astro:assets';
 import logosanko from '../assets/images/sanko-logo-blanco.png';
-
+const { color } = Astro.props;
 ---
 
 <nav class="navbar" }>
@@ -39,7 +39,7 @@ import logosanko from '../assets/images/sanko-logo-blanco.png';
   <span class="hidden-span">Sanko Electronica</span>
 </button>
 
-<style >
+<style define:vars={{ color }}>
   a{
     display: flex;
     align-items: center;
@@ -106,18 +106,21 @@ import logosanko from '../assets/images/sanko-logo-blanco.png';
   a:not(.active) {
     color: white;
   }
-  .link1.active {
-    color: var(--accent-red);
+  a.active {
+    color: var(--color);
   }
-  .link2.active {
-    color: var(--accent-yellow);
-  }
-  .link3.active {
-    color: var(--accent-green);
-  }
-  .link4.active {
-    color: var(--accent-blue);
-  }
+  /* .link1.active { */
+  /*   color: var(--accent-red); */
+  /* } */
+  /* .link2.active { */
+  /*   color: var(--accent-yellow); */
+  /* } */
+  /* .link3.active { */
+  /*   color: var(--accent-green); */
+  /* } */
+  /* .link4.active { */
+  /*   color: var(--accent-blue); */
+  /* } */
 	.navbar-item:hover {
 		color: white;
 	}

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
 import { Image } from 'astro:assets';
 import "./pageStyles.css";
 import sq800 from '../assets/images/strapaq-SQ-800.jpg';
@@ -17,22 +18,17 @@ import strapaqlogo from '../assets/images/Strapack-Logo.png';
           lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
           lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         </p>
-        <div class="content content-cards">
-           <div class="equipo">
-            <div class="flex">
-              <h4>SQ-800 </h4>
-              <Image style={{backgroundColor: "white", borderRadius: "5px"}} src={strapaqlogo} alt="Strapaq" width="200px" height="auto" />
-            </div>
-            <p>AUTOMATIC STRAPPING MACHINE</p>
-            <div>
-              <Image  src={sq800} alt="sq800" width="200px" height="auto" />
-              <p>Introducing StraPack’s new line of strapping machine, the SQ-800 with brushless DC motor. The SQ-800 provides better efficiency without compromising the reliability of the legendary RQ-8x.
-                  Standard strapping rate is 55 straps/min, even when tension is applied. The machine is ready to operate in less than 25 seconds, contributing to increased packaging line efficiencies.
-                  The SQ-800 offers different modes of tensioning system which can be selected according to the application requirements. A wide range of tension is available via a digitally controlled tension dial.  Tension capability is up to 80kgf or 176lbf (equivalent of 150mm or 6” stroke). Unlike many other machines in the market, tension does not compromise the cycle speed.</p>
-            </div>
-            <a class="button" href="mailto:info@sankoelectronica.com">Contactar</a>
-          </div>
+      <div class="content content-cards">
+        <div class="flex">
+          <h2>Equipos</h2>
+          <Image  src={strapaqlogo} style={{backgroundColor: "white", borderRadius: "5px"}} alt="Strapaq" width="200px" height="auto" />
         </div>
+        <ProductCard style="full" color="var(--accent-yellow)" title="MY-8" image={sq800} alt="Strapaq" subject="Strapaq sq800 (web)">
+          <p> lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          </p>
+        </ProductCard>
+      </div>
       </div>
     </section>
 	</main>

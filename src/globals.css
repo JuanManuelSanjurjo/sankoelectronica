@@ -5,7 +5,8 @@
   --accent: #e6007a;
   --accent-blue: #026ee0;
   --accent-red: #9e005d;
-  --accent-green: #00b16a;
+  /* --accent-green: #00b16a; */
+  --accent-green: #009463;
   --accent-yellow: #dbb700;
   --accent-gradient: linear-gradient(
     45deg,

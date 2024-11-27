@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-const { title, image, alt, subject, style } = Astro.props;
+const { title, image, alt, subject, style, color } = Astro.props;
 ---
 
 <div class={`equipo ${style}`}>
@@ -13,9 +13,10 @@ const { title, image, alt, subject, style } = Astro.props;
 </div>
 
 
-<style >
+<style define:vars={{ color }}>
   h4{
     margin-block: 2rem;
+    border-bottom: 1px solid var(--color);
   }
   div img{
     margin: 0;

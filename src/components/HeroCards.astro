@@ -72,12 +72,14 @@ const { image, alt, href } = Astro.props;
     transform: scaleX(0);
     transform-origin: left;
     background-color: var(--accent-blue);
+    background-color: var(--frame);
     transition:  0.2s  cubic-bezier(0.455, 0.03, 0.515, 0.955);
     z-index: -1;
   }
   .hero-card-container:hover h4::before { 
     transform: scaleX(1);
     box-shadow: 4px 4px 0px 0px var(--frame);
+    box-shadow: 4px 4px 0px 0px white;
    }
   @media (max-width: 1345px) {
     h4::before{
