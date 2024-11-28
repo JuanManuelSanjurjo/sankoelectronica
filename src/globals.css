@@ -74,6 +74,7 @@ section {
   min-height: 100vh;
   position: relative;
 }
+
 .content {
   width: clamp(300px, 70vw, 800px);
   margin: auto;
@@ -137,6 +138,9 @@ ul {
   backdrop-filter: blur(10px);
 }
 @media (max-width: 1150px) {
+  :root {
+    --p: 0.9rem;
+  }
   body {
     font-size: 14px;
   }
