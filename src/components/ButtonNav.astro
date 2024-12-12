@@ -1,7 +1,7 @@
 ---
 const { sections } = Astro.props; // sections es un array con los IDs y nombres de las secciones
 ---
-<nav class="vertical-nav">
+<nav class="vertical-nav glass">
   {sections.map((section, index) => (
     <a 
       href={`#${section.id}`} 
@@ -18,7 +18,7 @@ const { sections } = Astro.props; // sections es un array con los IDs y nombres 
 .vertical-nav {
   position: fixed;
   top: 50%;
-  left: 20px;
+  left: 10px;
   transform: translateY(-50%);
   background-color: rgba(0,0,0,0.5);
   padding: 20px 10px;

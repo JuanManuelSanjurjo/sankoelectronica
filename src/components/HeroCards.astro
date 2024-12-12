@@ -5,7 +5,7 @@ const { image, alt, href } = Astro.props;
 ---
 <a href={href} class="hero-card-container glass">
   <div class="hero-card">
-    <Image transition:name={alt} class="image" src={image} alt={alt} width="190px" height="190px" />
+    <Image transition:name={alt} class="image" src={image} alt={alt} width="170px" height="170px" />
   </div>  
   <h4>{alt}</h4>
 </a>
@@ -13,14 +13,14 @@ const { image, alt, href } = Astro.props;
 <style>
   .hero-card-container {
     box-shadow: 0px 0px 2px 1px var(--black);
-    border-radius: 10px;
+    /* border-radius: 10px; */
     padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 1rem;
+    gap: 3rem;
     text-decoration: none;
   }
  .hero-card {
@@ -38,8 +38,8 @@ const { image, alt, href } = Astro.props;
   .image {
     padding: 10px; 
     object-fit: contain; 
-    width: 190px; 
-    height: 190px; 
+    width: 175px; 
+    height: 175px; 
   }
 
   .hero-card-container:hover .hero-card {

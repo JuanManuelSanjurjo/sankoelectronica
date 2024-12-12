@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import ProductCard from '../components/ProductCard.astro';
+import SubNav from '../components/SubNav.astro';
+import Maintenance from '../components/Maintnance.astro';
+import reparacion1 from '../assets/images/reparacion1.jpeg';
 import "./pageStyles.css";
 import tokyoKeiki from '../assets/images/tokyo-keiki.webp';
 import autopiloto from '../assets/images/autopiloto.jpg';
@@ -18,24 +21,37 @@ const tags = ['sanko', 'girocompas', 'mar del plata', 'autopiloto', 'tokyo keiki
         <p class="instructions">
           lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         </p>
+        <SubNav links={[{ text: "Equipos", href: "#equipos" },{text: "Mantenimiento y reparaciones", href: "#reparaciones"}, { text: "Repuestos", href: "#repuestos" }]} />
       </div>
+
+      <br id="equipos">
+
       <div class="content content-cards">
-        <div class="flex">
-          <h2>Equipos</h2>
+        <div class="flex marca">
           <Image  src={tokyoKeiki} alt="Hamade" width="200px" height="auto" />
         </div>
-        <ProductCard style="full" color="var(--accent-blue)" title="Autopilot PR-9000" image={autopiloto} alt="Autopilot PR-9000" subject="Tokyo Keiki PR-9000 (web)">
+        <ProductCard href="https://www.tokyokeiki.jp/e/products/marine/pilot.html" style="full" color="var(--accent-blue)" title="Autopilotos" image={autopiloto} alt="Autopilot PR-9000" subject="Tokyo Keiki PR-9000 (web)">
           <p> lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
               lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
           </p>
         </ProductCard>
-        <ProductCard style="full" color="var(--accent-blue)" title="Gyrocompass" image={girocompas} alt="Gyrocompass" subject="Tokyo Keiki Gyrocompass (web)">
+        <ProductCard href="https://www.tokyokeiki.jp/e/products/detail.html?pdid=155" style="full" color="var(--accent-blue)" title="Girocompases" image={girocompas} alt="Gyrocompass" subject="Tokyo Keiki Gyrocompass (web)">
           <p> lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
               lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
           </p>
         </ProductCard>
       </div>
     </section>
+
+
+    <Maintenance id="reparaciones" color="var(--accent-blue)" subject="Mantenimiento Girocompases y Autopilotos (web)" title="Mantenimiento preventivo y reparaciones" image={reparacion1} alt="reparaciones">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. st laborum.</p>
+    </Maintenance>
+
+    <Maintenance id="repuestos" color="var(--accent-blue)" subject="Repuestos, girocompases y autopilotos (web)" title="Repuestos" image={reparacion1} alt="repuestos">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. st laborum.</p>
+    </Maintenance>
+
 	</main>
 </Layout>
 

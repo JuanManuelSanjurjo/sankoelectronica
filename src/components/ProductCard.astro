@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets';
-const { title, image, alt, subject, style, color } = Astro.props;
+import ContactButton from './ContactButton.astro';
+import SecondaryButton from './SecondaryButton.astro';
+const { title, image, alt, subject, style, color, href } = Astro.props;
 ---
 
 <div class={`equipo ${style}`}>
@@ -9,7 +11,12 @@ const { title, image, alt, subject, style, color } = Astro.props;
     <Image transition:name={alt} src={image} alt={alt} width="200px" height="auto" />
     <slot/>
   </div>
-  <a class="button" href={`mailto:info@sankoelectronica.com?subject=${subject}`}>Contactar</a>
+  <div class="flex">
+    { href &&
+    <SecondaryButton href={href} subject={subject}>INFO</SecondaryButton>
+    }
+    <ContactButton subject={subject} />
+  </div>
 </div>
 
 
@@ -21,15 +28,14 @@ const { title, image, alt, subject, style, color } = Astro.props;
   div img{
     margin: 0;
   }
+  div.flex {
+    justify-content: flex-end;
+  }
   .equipo  {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding: 2rem;
-  }
-  .full {
-    border-radius: 5px;
-    background-color: var(--frame);
   }
   .equipo div{
     display: flex;

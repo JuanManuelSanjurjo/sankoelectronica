@@ -1,0 +1,6 @@
+---
+const { subject, size } = Astro.props;
+---
+
+<a class:list={["button", { small: size === "small" }]} href={`mailto:sankoelectronica@gmail.com?subject=${subject} (web)`}>Consultar</a>
+

@@ -1,0 +1,65 @@
+---
+import { Image } from "astro:assets"
+import ContactButton from "./ContactButton.astro";
+import SecondaryButton from "./SecondaryButton.astro";
+const {href, title, image, alt, subject, style, color } = Astro.props;
+---
+
+<div class="category-card-container full">
+  <Image transition:name={alt} class="image" src={image} alt={alt} width="170px" height="170px" />
+  <div class="category-card">
+    <p>{title}</p>
+    <div class="buttons">
+      <SecondaryButton size="small" href={href}>Listado</SecondaryButton>
+      <ContactButton size="small" href={href}>Contactar</ContactButton>
+    </div>
+  </div>  
+</div>
+
+
+<style>
+  p{
+    font-size: 1.1rem;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid var(--accent-blue);
+  }
+  .buttons{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    gap: 0.5rem;
+  }
+  .category-card-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    transition: all 0.2s ease-in-out;
+  }
+  .category-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .category-card-container:hover {
+    background-color: var(--blue);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+ .image {
+    display: flex;
+    flex: 0 ;
+    justify-content: flex-start;
+    aspect-ratio: 1/1;
+    width: 100px;
+    heigth: auto;
+    object-fit: scale-down;
+    transition: all 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+
+</style>

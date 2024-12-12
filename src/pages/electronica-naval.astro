@@ -2,9 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import ProductCard from '../components/ProductCard.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+import SubNav from '../components/SubNav.astro';
+import Maintenance from '../components/Maintnance.astro';
+import reparacion1 from '../assets/images/reparacion1.jpeg';
 import "./pageStyles.css";
-import radar from '../assets/images/radar.jpg';
 import koden from '../assets/images/koden-logo.png';
+import chartplotter from '../assets/images/chart-plotter-GTD-120.jpg';
+import echosounders from '../assets/images/echo-sounder-cvs-128b.png';
+import gpsnavigators from '../assets/images/gps-krd-10.png';
+import imoproducts from '../assets/images/IMO-kat-330.jpg';
+import multifunctiondisplays from '../assets/images/displays-KSD-1210.png';
+import gpsbuoy from '../assets/images/buoy-PKP-27.png';
+import radar from '../assets/images/radar.jpg';
 import sonar from '../assets/images/sonar.png';
 
 const tags = ['sanko', 'electronica', 'naval', 'mar del plata', 'radar', 'sonar','MDC-5240', 'ESR-145'];
@@ -18,24 +28,33 @@ const tags = ['sanko', 'electronica', 'naval', 'mar del plata', 'radar', 'sonar'
         <p class="instructions">
           lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         </p>
+        <SubNav links={[{ text: "Equipos", href: "#equipos" }, { text: "Repuestos", href: "#repuestos" }]} />
       </div>
+
+      <br id="equipos">
+
       <div class="content content-cards">
-        <div class="flex">
-          <h2>Equipos</h2>
+        <div class="flex marca">
           <Image  src={koden} alt="Hamade" width="200px" height="auto" />
         </div>
-        <ProductCard style="full" color="var(--accent-green)" title="MDC-5240" image={radar} alt="MDC-5240" subject="Koden MDC-5240 (web)">
-          <p> lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          </p>
-        </ProductCard>
-        <ProductCard style="full" color="var(--accent-green)" title="ESR-145" image={sonar} alt="ESR-145" subject="Koden ESR-145 (web)">
-          <p> lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          </p>
-        </ProductCard>
+        <div class="categorie-container">
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/gtd-enmarine" title="Chart Plotter" image={chartplotter} alt="Chart Plotter" subject="Chart Plotter (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/cvs-enmarine" title="Echo Sounders" image={echosounders} alt="Echo Sounders" subject="Echo Sounders (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/gps-enmarine" title="GPS Navigators, Sensors & remote displays" image={gpsnavigators} alt="GPS Navigators, Sensors & Remote displays" subject="GPS Navigators, Sensors & Remote displays (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/imo-enmarine" title="IMO Products" image={imoproducts} alt="IMO Products" subject="IMO Products (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/mdc-enmarine" title="Marine Radars & RADARpc" image={radar} alt="Marine Radars & RADARpc" subject="Marine Radars & RADARpc (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/esr-enmarine" title="Sonars" image={sonar} alt="Sonars" subject="Sonars (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/mfd-enmarine" title="Multi Function Displays" image={multifunctiondisplays} alt="Multi Function Displays" subject="Multi Function Displays (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/kgv-enmarine" title="GPS Buoy" image={gpsbuoy} alt="GPS Buoy" subject="GPS Buoy (web)" />
+        </div>
       </div>
     </section>
+
+
+    <Maintenance id="repuestos" color="var(--accent-green)" subject="Repuestos, electronica naval (web)" title="Repuestos" image={reparacion1} alt="repuestos">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. st laborum.</p>
+    </Maintenance>
+
 	</main>
 </Layout>
 

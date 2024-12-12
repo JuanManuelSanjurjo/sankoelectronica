@@ -1,11 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProductCard from '../components/ProductCard.astro';
+import SubNav from '../components/SubNav.astro';
 import { Image } from 'astro:assets';
 import "./pageStyles.css";
+import Maintenance from '../components/Maintnance.astro';
+import reparacion1 from '../assets/images/reparacion1.jpeg';
 import sq800 from '../assets/images/strapaq-SQ-800.jpg';
+import lq400 from '../assets/images/iQ-400.jpg';
+import jk5000 from '../assets/images/JK-5000.jpg';
+import rq7000 from '../assets/images/RQ7000M.jpg';
 import strapaqlogo from '../assets/images/Strapack-Logo.png';
-
 const tags = ['sanko', 'electronica', 'naval', 'mar del plata', 'strapaq', 'sq800'];
 ---
 
@@ -13,26 +18,47 @@ const tags = ['sanko', 'electronica', 'naval', 'mar del plata', 'strapaq', 'sq80
 	<main>
     <section>
       <div class="content">
-        <div class="flex">
-          <h1>Embalajes</h1>
-        </div>
+        <h1>Embalajes</h1>
         <p class="instructions">
           lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
           lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         </p>
+        <SubNav links={[{ text: "Equipos", href: "#equipos" }, { text: "Repuestos", href: "#repuestos" }]} />
+      </div>
+
+      <br id="equipos">
+
       <div class="content content-cards">
-        <div class="flex">
-          <h2>Equipos</h2>
+        <div class="flex marca">
           <Image  src={strapaqlogo} style={{backgroundColor: "white", borderRadius: "5px"}} alt="Strapaq" width="200px" height="auto" />
         </div>
-        <ProductCard style="full" color="var(--accent-yellow)" title="SQ-800" image={sq800} alt="Strapaq" subject="Strapaq sq800 (web)">
-          <p> lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        <ProductCard style="full" color="var(--accent-yellow)" title="SQ-800" image={sq800} alt="Strapaq" subject="Strapaq sq800">
+          <p>
+         StraPack’s JK-5 has been improved considerably and transformed into the JK-5000 with the same affordability. The JK-5000 can achieve up to 37 straps/minute, while maintaining all the benefits of the JK-5, such as a 110 Volt power supply, simple strap width adjustment from 5mm to 15.5mm (5/8in), auto re-feed, loop ejection and small footprint. Another new feature to the JK-5000 is a self-diagnostic programmable microprocessor which continuously monitors critical electrical functions. Should an electrical problem arise, the monitoring panel immediately displays the function affected to take the guess work out of troubleshooting, making restoration more efficient.
+ </p>
+        </ProductCard>
+        <ProductCard style="full" color="var(--accent-yellow)" title="IQ-400" image={lq400} alt="Strapaq" subject="Strapaq LQ-400">
+          <p> Introducing the iQ-400, StraPack’s new semi-automatic strapping machine with dual tension mode. This allows for a wide variety of applications with just a flick of a switch.
+The iQ-400 is a durable and heavy-duty strapping machine designed to withstand various harsh environments. It is amazingly quiet to operate and well suited for office use also.
+The iQ-400 has less moving parts, which makes it easy to maintain and keeps the operation cost low. All electric parts are arranged in one side of the machine, enclosed in the cabinet, for easy maintenance and protection of crucial parts.
+The torque tension mode is suitable for stronger tension or to strap compressible packages, while the stroke tension mode is best for soft tension or quick operation.</p>
+        </ProductCard>
+        <ProductCard style="full" color="var(--accent-yellow)" title="JK-5000" image={jk5000} alt="Strapaq" subject="Strapaq JK-5000">
+          <p>
+StraPack’s JK-5 has been improved considerably and transformed into the JK-5000 with the same affordability. The JK-5000 can achieve up to 37 straps/minute, while maintaining all the benefits of the JK-5, such as a 110 Volt power supply, simple strap width adjustment from 5mm to 15.5mm (5/8in), auto re-feed, loop ejection and small footprint. Another new feature to the JK-5000 is a self-diagnostic programmable microprocessor which continuously monitors critical electrical functions. Should an electrical problem arise, the monitoring panel immediately displays the function affected to take the guess work out of troubleshooting, making restoration more efficient.
           </p>
         </ProductCard>
-      </div>
+        <ProductCard style="full" color="var(--accent-yellow)" title="RQ7000M" image={rq7000} alt="Strapaq" subject="Strapaq RQ7000M">
+          <p> The RQ7000M boasts the advanced high-speed sealing head of RQ7000, durability of the AQ-7M for moisture-laden environments, and most of the features of the best-selling automatic machine, RQ-8, such as strap self-loading, re-feed and loop ejection. The RQ7000M is capable of 50 straps per minute (1.2 seconds per cycle), which is among the fastest machines of this kind. Permanently lubricated mechanisms, side-seal design, and body parts made of stainless steel make the RQ7000M the ideal machine for harsh environments. Fully automatic configurations available.         </p>
+        </ProductCard>
       </div>
     </section>
+
+
+    <Maintenance id="repuestos" color="var(--accent-yellow)" subject="Repuestos, embalajes (web)" title="Repuestos" image={reparacion1} alt="repuestos">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. st laborum.</p>
+    </Maintenance>
+
 	</main>
 </Layout>
 

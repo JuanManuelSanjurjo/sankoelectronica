@@ -1,27 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProductCard from '../components/ProductCard.astro';
+import SubNav from '../components/SubNav.astro';
+import Maintenance from '../components/Maintnance.astro';
 import { Image } from 'astro:assets';
 import "./pageStyles.css";
 import hamade from '../assets/images/hamade-my8.jpg';
 import hamadelogo from '../assets/images/hamade-logo.png';
+import reparacion1 from '../assets/images/reparacion1.jpeg';
 
 const tags = ['sanko', 'girocompas', 'mar del plata', 'hamade', 'calamar', 'my-8', 'my-18'];
 ---
 
 <Layout title="Pesca de calamar" description="Pesca de calamar" tags={tags} color="var(--accent-red)">
 	<main>
-    <section>
+    <section >
       <div class="content">
         <h1>Pesca de calamar</h1>
         <p class="instructions">
           lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
           lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         </p>
+        <SubNav links={[{ text: "Equipos", href: "#equipos" },{text: "Mantenimiento y reparaciones", href: "#reparaciones"}, { text: "Repuestos", href: "#repuestos" }]} />
       </div>
-      <div class="content content-cards">
-        <div class="flex">
-          <h2>Equipos</h2>
+
+      <div id="equipos" class="content content-cards anchor-target">
+        <div class="flex marca"  >
           <Image  src={hamadelogo} alt="Hamade" width="200px" height="auto" />
         </div>
         <ProductCard style="full" color="var(--accent-red)" title="MY-8" image={hamade} alt="my-8" subject="Hamade MY-8 (web)">
@@ -34,12 +38,6 @@ const tags = ['sanko', 'girocompas', 'mar del plata', 'hamade', 'calamar', 'my-8
               lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
           </p>
         </ProductCard>
-        <ProductCard style="full" color="var(--accent-red)" title="EX-2N" image={hamade} alt="ex-2n" subject="Hamade EX-2N (web)">
-          <p> lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          </p>
-        </ProductCard>
-
       </div>
 
     </section>
@@ -73,6 +71,14 @@ const tags = ['sanko', 'girocompas', 'mar del plata', 'hamade', 'calamar', 'my-8
         </div>
       </div>
     </section>
+
+    <Maintenance id="reparaciones" color="var(--accent-red)" subject="Mantenimiento preventivo y reparaciones, pesca de calamar (web)" title="Mantenimiento preventivo y reparaciones" image={reparacion1} alt="reparaciones">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. st laborum.</p>
+    </Maintenance>
+
+    <Maintenance id="repuestos" color="var(--accent-red)" subject="Repuestos, pesca de calamar (web)" title="Repuestos" image={reparacion1} alt="repuestos">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. st laborum.</p>
+    </Maintenance>
 
 	</main>
 </Layout>

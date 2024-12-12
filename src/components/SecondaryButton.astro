@@ -1,0 +1,8 @@
+---
+const { href, size } = Astro.props;
+---
+<a  href={href} target="_blank" class:list={["button", "secondary-btn", { small: size === "small" }]}>
+  <slot />
+</a>
+
+

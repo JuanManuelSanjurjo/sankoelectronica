@@ -7,6 +7,12 @@ h5 {
   border-bottom: 1px solid white;
   padding-bottom: 0.6rem;
 }
+section a:hover{
+  text-decoration: none;
+}
+.section-pad {
+  padding-top: 10rem;
+}
 .flex {
   display: flex;
   align-items: center;
@@ -27,12 +33,40 @@ h5 {
   margin-block: 4rem;
   gap: 2rem;
 }
+.categorie-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.small {
+  padding: 0.3rem 0.7rem ;
+  font-size: 0.7rem;
+  width: 100%;
+}
+.secondary-btn {
+  background-color: transparent;
+  outline:  2px solid var(--accent-blue);
+  outline-offset: -2px;
+} 
+.secondary-btn:hover {
+  background-color: var(--accent-blue);
+  color: white;
+}
+.full {
+  background-color: var(--frame);
+  border-right: 2px solid var(--accent-blue);
+}
+.marca{
+  background-color: var(--frame);
+  padding: 2rem;
+}
 .box {
   border: 1px solid white;
   padding: 4rem 2rem;
   align-self: stretch;
   flex-grow: 2;
 }
+
 @media (max-width: 1150px) {
   .flex {
     flex-direction: column;
