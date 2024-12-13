@@ -10,11 +10,17 @@ h5 {
 section a:hover{
   text-decoration: none;
 }
+p > a {
+  text-decoration: underline;
+}
+p > a:hover {
+  color: var(--accent-blue);
+}
 .section-pad {
   padding-top: 10rem;
 }
 .flex {
-  display: flex;
+  display: flex;  
   align-items: center;
   align-items: stretch;
   gap: 2rem;
@@ -62,7 +68,7 @@ section a:hover{
 }
 .box {
   border: 1px solid white;
-  padding: 4rem 2rem;
+  padding: 2rem ;
   align-self: stretch;
   flex-grow: 2;
 }

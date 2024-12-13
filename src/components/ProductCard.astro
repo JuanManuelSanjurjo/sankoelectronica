@@ -2,13 +2,13 @@
 import { Image } from 'astro:assets';
 import ContactButton from './ContactButton.astro';
 import SecondaryButton from './SecondaryButton.astro';
-const { title, image, alt, subject, style, color, href } = Astro.props;
+const { title, image, alt, subject, style, imgWidth, color, href } = Astro.props;
 ---
 
 <div class={`equipo ${style}`}>
   <h4>{title}</h4>
   <div>
-    <Image transition:name={alt} src={image} alt={alt} width="200px" height="auto" />
+    <Image class="img" transition:name={alt} src={image} alt={alt} width={imgWidth ? imgWidth : "200px"} height="auto" />
     <slot/>
   </div>
   <div class="flex">
@@ -50,6 +50,10 @@ const { title, image, alt, subject, style, color, href } = Astro.props;
   .equipo  {
     padding: 1rem;
   }
+  .img{
+      width: 250px;
+      height: auto;
+    }
 
 } 
 </style>

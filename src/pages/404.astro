@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "./pageStyles.css"
+---
+
+<Layout title="Page not found"  >
+	<main>
+    
+    <div >
+      <h2>Pagina no encontrada</h2>
+      <a href="/" class="button secondary-btn">Volver</a>
+    </div>
+
+
+	</main>
+</Layout>
+
+<style >
+  main{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+</style>

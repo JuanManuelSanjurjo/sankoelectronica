@@ -8,7 +8,7 @@ const {title, image, alt, subject, color, id} = Astro.props;
 
 <div id={id} class="anchor-target maintenance" >
   <div class="content">
-    <ProductCard style="full" color={color} title={title} image={image} alt={alt} subject={subject}>
+    <ProductCard style="full" imgWidth="350px" color={color} title={title} image={image} alt={alt} subject={subject}>
       <slot/>
     </ProductCard>
   </div>
