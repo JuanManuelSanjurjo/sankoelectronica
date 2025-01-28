@@ -2,7 +2,7 @@
   --black: hsl(223, 16%, 9%);
   --disabled: hsl(0, 0%, 62%);
   --frame: hsl(221, 100%, 19%);
-  --blue: 	hsl(216, 88%, 29%);
+  --blue: hsl(216, 88%, 29%);
   --light-blue: hsl(214, 84%, 33%);
   --accent: #e6007ahsl(328, 100%, 33%);
   --accent-blue: hsl(211, 98%, 44%);
@@ -121,7 +121,7 @@ ul {
 .button {
   padding: 0.5rem 1rem;
   background-color: var(--light-blue);
-  outline:  2px solid var(--blue);
+  outline: 2px solid var(--blue);
   outline-offset: -2px;
   color: white;
   font-size: 1rem;
@@ -136,7 +136,7 @@ ul {
 }
 .button:hover {
   background-color: var(--accent-blue);
-  outline:  2px solid var(--light-blue);
+  outline: 2px solid var(--light-blue);
 }
 .glass {
   background-color: color-mix(in hsl, var(--black) 29%, transparent 0%);
