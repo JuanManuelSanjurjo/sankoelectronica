@@ -14,7 +14,7 @@ const tags = ['sanko', 'girocompas', 'mar del plata', 'hamade', 'calamar', 'my-8
 const subNavLinks =  [{ text: "Equipos", href: "#equipos" },{text: "Mantenimiento y reparaciones", href: "#reparaciones"}, { text: "Repuestos", href: "#repuestos" },{text: "Info", href:"#info"}]
 ---
 
-<Layout title="Hamade" description="Hamade products" tags={tags} color="var(--accent-red)">
+<Layout title="Hamade" description="Hamade products" tags={tags} color="var(--accent-blue)">
 	<main>
     <section >
       <div class="content">
@@ -29,11 +29,11 @@ const subNavLinks =  [{ text: "Equipos", href: "#equipos" },{text: "Mantenimient
         <div class="flex marca"  >
           <Image  src={hamadelogo} alt="Hamade" width="200px" height="auto" />
         </div>
-        <ProductCard style="full" color="var(--accent-red)" title="MY-8" image={hamade} alt="my-8" subject="Hamade MY-8 (web)">
+        <ProductCard style="full" color="var(--accent-blue)" title="MY-8" image={hamade} alt="my-8" subject="Hamade MY-8 (web)">
           <p> A new version of the squid fishing machine with the popular crystal control panel and increased functionality
 It is a simple fishing machine with its focus firmly on functionality.</p>
         </ProductCard>
-        <ProductCard style="full" color="var(--accent-red)" title="MY-18" image={hamade} alt="my-18" subject="Hamade MY-18 (web)">
+        <ProductCard style="full" color="var(--accent-blue)" title="MY-18" image={hamade} alt="my-18" subject="Hamade MY-18 (web)">
           <p> The latest model with the newly developped Triaxial GravitySensor. 30mm spindle and reinforced chain.
           </p>
         </ProductCard>
@@ -41,11 +41,11 @@ It is a simple fishing machine with its focus firmly on functionality.</p>
 
     </section>
 
-    <Maintenance id="reparaciones" color="var(--accent-red)" subject="Mantenimiento preventivo y reparaciones, pesca de calamar (web)" title="Mantenimiento y reparaciones" image={reparacion1} alt="reparaciones">
+    <Maintenance id="reparaciones" color="var(--accent-blue)" subject="Mantenimiento preventivo y reparaciones, pesca de calamar (web)" title="Mantenimiento y reparaciones" image={reparacion1} alt="reparaciones">
       <p>Realizamos mantenimientos preventivos y reparaciones de todas las unidades de pesca de calamar.</p>
     </Maintenance>
 
-    <Maintenance id="repuestos" color="var(--accent-red)" subject="Repuestos, pesca de calamar (web)" title="Repuestos" image={reparacion1} alt="repuestos">
+    <Maintenance id="repuestos" color="var(--accent-blue)" subject="Repuestos, pesca de calamar (web)" title="Repuestos" image={reparacion1} alt="repuestos">
       <p>Somos proveedores directos de repuestos. Contactese con nosotros para obtener más información.</p>
     </Maintenance>
 
@@ -86,6 +86,6 @@ It is a simple fishing machine with its focus firmly on functionality.</p>
 
 <style >
   h1 {
-    text-decoration: var(--accent-red) underline;
+    text-decoration: var(--accent-blue) underline;
   }
 </style>
