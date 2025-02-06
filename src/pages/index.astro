@@ -14,7 +14,7 @@ const tags = ['sanko', 'electronica', 'naval', 'embalajes', 'girocompas', 'mar d
   <ButtonNav sections={sections} />
 	<main>
     <section id="business">
-        <div class="banner" >
+        <!-- <div class="banner" > -->
         <nav>
           <a href="/hamade" class="nav-item">Hamade</a>
           <a href="/pesca-de-calamar" class="nav-item">Pesca de Calamar</a>
@@ -83,6 +83,9 @@ Gracias a nuestra experiencia y tradición en el sector, en Sanko Electrónica c
     background-size: cover;
     background-attachment: fixed;
   }
+  section {
+     padding-block: 100px
+  }
 
   nav {
     display: grid;
@@ -128,6 +131,7 @@ nav:has(:nth-child(5):hover) {
   justify-content: center;
   align-items: center;
   text-align: center;
+  text-shadow: 3px 3px 3px #000;
   z-index: 1;
 }
 
@@ -136,25 +140,25 @@ nav:has(:nth-child(5):hover) {
   z-index: -1;
   inset: 0;
   content: "";
-  opacity: 1;
   transition: opacity 0.3s ease-in-out;
-}
-
-.nav-item:hover::after {
   opacity: 0.5;
 }
 
+.nav-item:hover::after {
+  opacity: 1;
+}
+
 .nav-item:nth-child(1)::after {
-    background-color: rgba(0, 100, 250, 0.5);
+    background-color: rgba(0, 100, 250, 0.25);
 }
 .nav-item:nth-child(2)::after {
-    background-color: rgba(250, 100, 100, 0.5);
+    background-color: rgba(250, 100, 100, 0.25);
 }
 .nav-item:nth-child(3)::after {
-    background-color: rgba(180, 180, 10, 0.5);
+    background-color: rgba(180, 180, 10, 0.25);
 }
 .nav-item:nth-child(4)::after {
-  background-color: rgba(10, 250, 180, 0.5);
+  background-color: rgba(10, 250, 180, 0.25);
 }
 .nav-item:nth-child(5)::after {
     background-color: rgba(100, 100, 250, 0.5);
@@ -203,33 +207,22 @@ nav:has(:nth-child(5):hover) {
       font-size: 1.125rem;
     }
     nav {
-    width: 100vw;
-    grid-template-columns: 1fr;
+    width: 100vw ;
+    grid-template-columns: 1fr ;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  }
-
-  nav:has(:nth-child(1):hover) {
-    grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
-  }
-
-  nav:has(:nth-child(2):hover) {
-    grid-template-rows: 1fr 2fr 1fr 1fr 1fr;
-  }
-
-  nav:has(:nth-child(3):hover) {
-      grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
-  } 
-  nav:has(:nth-child(4):hover) {
-    grid-template-rows: 1fr 1fr 1fr 2fr 1fr;
     }
+    .nav-item {
+      height: unset;
+    }
+   
+    /* Desactivar hover manualmente en móviles */
+    nav:has(:nth-child(1):hover),
+    nav:has(:nth-child(2):hover),
+    nav:has(:nth-child(3):hover),
+    nav:has(:nth-child(4):hover),
     nav:has(:nth-child(5):hover) {
-    grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+      grid-template-columns: 1fr ;
+      /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
+    }
   }
-  .nav-item {
-    height: unset;
-  }
-
- }
-
-
 </style>
