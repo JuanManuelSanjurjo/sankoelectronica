@@ -48,6 +48,7 @@ const { color } = Astro.props;
     align-items: center;
     gap: 1rem;
     text-wrap: balance;
+    padding-inline: 0.5rem;
   }
   .language{
     background-color: rgba(100,100,100, 0.4);
@@ -102,15 +103,15 @@ const { color } = Astro.props;
 		margin-right: 0.5rem;
 	}
 	.navbar-item {
-		margin-left: 1rem;
-		padding: 0.2rem;
+		/* margin-left: 1rem; */
+		padding-block: 0.2rem;
 		transition:  0.2s ease, color 0.2s ease;
   }
   a:not(.active) {
     color: white;
   }
   a.active {
-    color: var(--color);
+    color: var(--accent-blue);
   }
 	.navbar-item:hover {
 		color: white;
