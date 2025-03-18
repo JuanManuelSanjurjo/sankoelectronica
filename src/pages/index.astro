@@ -78,7 +78,6 @@ Gracias a nuestra experiencia y tradición en el sector, en Sanko Electrónica c
   main {
     background-image:
       linear-gradient(to bottom, rgba(0,110,240,0.3), rgba(256,0,0, 0.10)),
-      /* url(https://images.locationscout.net/2019/06/banquina-de-pescadores-argentina.webp?h=1401&q=80); */
       url("../assets/images/barcos1.jpeg");
     background-size: cover;
     background-attachment: fixed;
@@ -119,7 +118,7 @@ nav:has(:nth-child(5):hover) {
   position: relative;
   padding: 30px;
   height: 100vh;
-  font-size: 24px;
+  /* font-size: 34px; */
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -128,11 +127,17 @@ nav:has(:nth-child(5):hover) {
   background-size: cover;
   pointer-events: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  text-shadow: 3px 3px 3px #000;
   z-index: 1;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* text-align: center; */
+  /* text-shadow: 3px 3px 3px #000; */
+  writing-mode: vertical-rl;
+  font-size: clamp(1.5rem, 5vh, 4rem);
+  font-stretch: semi-condensed;
+  line-height: 5rem;
+  text-shadow: 4px 2px  var(--blue);
+  border-right: 10px solid color-mix(in hsl, var(--frame) 85%, transparent);
 }
 
 .nav-item::after {
@@ -140,28 +145,29 @@ nav:has(:nth-child(5):hover) {
   z-index: -1;
   inset: 0;
   content: "";
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0.5;
+  opacity: 0.94;
+  background-color: var(--frame);
+  transition: opacity 0.8s ease-in-out;
 }
+
+/* .nav-item:nth-child(1)::after { */
+/*     background-color: rgba(0, 100, 250, 0.25); */
+/* } */
+/* .nav-item:nth-child(2)::after { */
+/*     background-color: var(--accent-red); */
+/* } */
+/* .nav-item:nth-child(3)::after { */
+/*     background-color: var(--accent-green); */
+/* } */
+/* .nav-item:nth-child(4)::after { */
+/*     background-color: var(--accent-yellow); */
+/* } */
+/* .nav-item:nth-child(5)::after { */
+/*     background-color: var(--accent-blue); */
+  /* } */
 
 .nav-item:hover::after {
-  opacity: 1;
-}
-
-.nav-item:nth-child(1)::after {
-    background-color: rgba(0, 100, 250, 0.25);
-}
-.nav-item:nth-child(2)::after {
-    background-color: rgba(250, 100, 100, 0.25);
-}
-.nav-item:nth-child(3)::after {
-    background-color: rgba(180, 180, 10, 0.25);
-}
-.nav-item:nth-child(4)::after {
-  background-color: rgba(10, 250, 180, 0.25);
-}
-.nav-item:nth-child(5)::after {
-    background-color: rgba(100, 100, 250, 0.5);
+  opacity: 0.5;
 }
 
 .nav-item:nth-child(1) {
@@ -213,6 +219,14 @@ nav:has(:nth-child(5):hover) {
     }
     .nav-item {
       height: unset;
+      justify-content: flex-start;
+      padding: 10px;
+      align-items: flex-end;
+      writing-mode: unset;
+      font-size: 24px;
+      line-height: unset;
+      border-right: unset;
+      border-bottom: 10px solid color-mix(in hsl, var(--frame) 85%, transparent);
     }
    
     /* Desactivar hover manualmente en móviles */
@@ -222,7 +236,6 @@ nav:has(:nth-child(5):hover) {
     nav:has(:nth-child(4):hover),
     nav:has(:nth-child(5):hover) {
       grid-template-columns: 1fr ;
-      /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
     }
   }
 </style>

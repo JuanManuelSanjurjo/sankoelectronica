@@ -28,13 +28,12 @@
   font-family: "Open Sauce Sans";
   font-style: normal;
   font-display: swap;
-  font-weight: 400;
-  src:
-    url(@fontsource/open-sauce-sans/files/open-sauce-sans-latin-400-normal.woff2)
-      format("woff2"),
-    url(@fontsource/open-sauce-sans/files/open-sauce-sans-latin-400-normal.woff)
-      format("woff");
+  font-weight: 400 800;
+  font-stretch: 50% 125%;
+  src: url("./assets/fonts/OpenSans-VariableFont_wdth,wght.ttf")
+    format("truetype");
 }
+
 .anchor-target {
   scroll-margin-top: 100px;
 }
