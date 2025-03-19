@@ -14,7 +14,6 @@ const tags = ['sanko', 'electronica', 'naval', 'embalajes', 'girocompas', 'mar d
   <ButtonNav sections={sections} />
 	<main>
     <section id="business">
-        <!-- <div class="banner" > -->
         <nav>
           <a href="/hamade" class="nav-item">Hamade</a>
           <a href="/pesca-de-calamar" class="nav-item">Pesca de Calamar</a>
@@ -70,6 +69,7 @@ Gracias a nuestra experiencia y tradición en el sector, en Sanko Electrónica c
     gap: 1rem;
     color: white;
     background-color: var(--frame);
+    background-color: var(--blue);
     padding: 2rem;
   }
   .content p {
@@ -81,6 +81,8 @@ Gracias a nuestra experiencia y tradición en el sector, en Sanko Electrónica c
       url("../assets/images/barcos1.jpeg");
     background-size: cover;
     background-attachment: fixed;
+    background: unset;
+    background-color: var(--frame);
   }
   section {
      padding-block: 100px
@@ -88,7 +90,6 @@ Gracias a nuestra experiencia y tradición en el sector, en Sanko Electrónica c
 
   nav {
     display: grid;
-    height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     pointer-events: none;
     user-select: none;
@@ -117,7 +118,7 @@ nav:has(:nth-child(5):hover) {
 .nav-item {
   position: relative;
   padding: 30px;
-  height: 100vh;
+  height: 92vh;
   /* font-size: 34px; */
   font-weight: 600;
   letter-spacing: 1px;
@@ -138,6 +139,9 @@ nav:has(:nth-child(5):hover) {
   line-height: 5rem;
   text-shadow: 4px 2px  var(--blue);
   border-right: 10px solid color-mix(in hsl, var(--frame) 85%, transparent);
+  /* font-size: 60px; */
+  /* line-height: 3.5rem; */
+  /* font-weight: 700; */
 }
 
 .nav-item::after {
@@ -209,9 +213,7 @@ nav:has(:nth-child(5):hover) {
     .content p {
       padding: 2rem 1rem;
     }
-    .nav-item {
-      font-size: 1.125rem;
-    }
+
     nav {
     width: 100vw ;
     grid-template-columns: 1fr ;
