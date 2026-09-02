@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 const { title, description, keywords } = Astro.props;
 ---
 
@@ -13,5 +13,5 @@ const { title, description, keywords } = Astro.props;
   <meta name="description" content={description || 'Sanko Electronica'}>
   <meta name="keywords" content={keywords || 'sanko, electronica, naval, embalajes, girocompas, mar del plata, autopiloto, radar, sonar,sq800, pesca, calamar'}>
   <title>{title || "Sanko Electronica"}</title>
-  <ViewTransitions />
+  <ClientRouter />
 </head>

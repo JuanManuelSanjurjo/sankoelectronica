@@ -11,7 +11,7 @@ export default defineConfig({
     locales: ["es", "en", "ja"],
     routing: {
       prefixDefaultLocale: false, // Evita que tu idioma principal requiera el prefijo /es/
-      redirectToDefaultLocale: true, // Redirige automáticamente al idioma base si es necesario
+      redirectToDefaultLocale: false, // Redirige automáticamente al idioma base si es necesario
     },
   },
 });
