@@ -1,0 +1,90 @@
+h2,
+h4,
+h5 {
+  margin-block: 2rem;
+}
+h5 {
+  border-bottom: 1px solid white;
+  padding-bottom: 0.6rem;
+}
+section a:hover {
+  text-decoration: none;
+}
+p > a {
+  text-decoration: underline;
+}
+p > a:hover {
+  color: var(--accent-blue);
+}
+.section-pad {
+  padding-top: 10rem;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  align-items: stretch;
+  gap: 2rem;
+}
+.column {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.box .flex img {
+  margin: 0;
+  align-self: center;
+}
+.content-cards {
+  display: flex;
+  flex-direction: column;
+  margin-block: 4rem;
+  gap: 2rem;
+}
+.categorie-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.small {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.7rem;
+  width: 100%;
+}
+.secondary-btn {
+  background-color: transparent;
+  outline: 2px solid var(--accent-blue);
+  outline-offset: -2px;
+}
+.secondary-btn:hover {
+  background-color: var(--accent-blue);
+  color: white;
+}
+.full {
+  background-color: var(--frame);
+  border-right: 2px solid var(--accent-blue);
+}
+.marca {
+  background-color: var(--frame);
+  padding: 2rem;
+}
+.box {
+  border: 1px solid white;
+  padding: 1.5rem;
+  align-self: stretch;
+  flex-grow: 2;
+}
+.flex > .box {
+  max-width: 33%;
+}
+
+@media (max-width: 1150px) {
+  .flex {
+    flex-direction: column;
+  }
+  .box {
+    padding: 2rem;
+    min-height: unset;
+  }
+  .flex > .box {
+    max-width: 100%;
+  }
+}

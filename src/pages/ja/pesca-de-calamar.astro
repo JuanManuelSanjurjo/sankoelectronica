@@ -1,0 +1,117 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import SubNav from '../../components/SubNav.astro';
+import Maintenance from '../../components/Maintnance.astro';
+import { Image } from 'astro:assets';
+import "./pageStyles.css";
+import hamade from '../../assets/images/hamade-my8.jpg';
+import hamadelogo from '../../assets/images/hamade-logo.png';
+import reparacion1 from '../../assets/images/reparacion1.jpeg';
+import diamondShape from "../../assets/images/diamond-shape.png";
+
+const tags = ['sanko', 'ギロコンパスとロボット', 'mar del plata', 'hamade', 'イカ', 'my-8', 'my-18'];
+const subNavLinks =  [{ text: "設備", href: "#equipos" },{text: "保守・修理", href: "#reparaciones"}, { text: "交換用部品", href: "#repuestos" },{text: "情報", href:"#情報"}]
+---
+
+<Layout title="Hamade" description="Squid Fishing" tags={tags} color="var(--accent-blue)" >
+	<main>
+    <section >
+      <div class="content">
+        <h1>カラマーの漁業</h1>
+        <p class="instructions"> 私たちは、以下の団体の代表者です 
+ <a href="http://towa-denki.co.jp/en/" target="_blank"> Hamade (TOWA DENKI SEISAKUSHO)</a>, 製品の品質で定評のある企業です。市場における信頼性の高さは、効率を最大限に高め、優れた成果を確実に得られるよう設計された、卓越したイカ釣り専用装備のラインナップに如実に表れています。</p>
+        <SubNav links={subNavLinks} />
+      </div>
+
+      <div id="equipos" class="content content-cards anchor-target">
+        <div class="flex marca"  >
+          <Image  src={hamadelogo} alt="Hamade" width="200" height="auto" />
+        </div>
+        <ProductCard style="full" color="var(--accent-blue)" title="MY-8" image={hamade} alt="my-8" subject="Hamade MY-8 (web)">
+          <p> 人気のクリスタル製コントロールパネルを搭載し、機能性を向上させた、イカ釣りマシンの新バージョンです。機能性を重視したシンプルな釣りマシンです。
+</p>
+        </ProductCard>
+        <ProductCard style="full" color="var(--accent-blue)" title="MY-18" image={hamade} alt="my-18" subject="Hamade MY-18 (web)">
+          <p> 新開発の「Triaxial GravitySensor」を搭載した最新モデル。30mmのスピンドルと強化チェーンを採用。
+          </p>
+        </ProductCard>
+      </div>
+
+      <div id="equipos2" class="content content-cards anchor-target">
+        <div class="flex marca"  >
+          <Image  src={hamadelogo} alt="Hamade" width="200" height="auto" />
+        </div>
+        <ProductCard style="full" color="var(--accent-blue)" title="MY-8" image={hamade} alt="my-8" subject="Hamade MY-8 (web)">
+          <p> 人気のクリスタル製コントロールパネルを搭載し、機能性を向上させた、イカ釣りマシンの新バージョンです。機能性を重視したシンプルな釣りマシンです。
+</p>
+        </ProductCard>
+        <ProductCard style="full" color="var(--accent-blue)" title="MY-18" image={hamade} alt="my-18" subject="Hamade MY-18 (web)">
+          <p> 新開発の「Triaxial GravitySensor」を搭載した最新モデル。30mmのスピンドルと強化チェーンを採用。
+          </p>
+        </ProductCard>
+      </div>
+
+    </section>
+    <Maintenance id="reparaciones" color="var(--accent-blue)" subject="Mantenimiento preventivo y reparaciones, pesca de calamar (web)" title="Maintenance and Repairs" image={reparacion1} alt="reparaciones">
+      <p>
+当社は、イカ漁に使用されるあらゆる機器の予防保全および修理を行っています。
+      </p>
+    </Maintenance>
+
+    <Maintenance id="repuestos" color="var(--accent-blue)" subject="Repuestos, pesca de calamar (web)" title="Spare Parts" image={reparacion1} alt="repuestos">
+      <p>
+当社は交換用部品の直販業者です。詳細については、お気軽にお問い合わせください。
+      </p>
+    </Maintenance>
+
+    <section id="info" class="anchor-target">
+      <div class="content">
+        <h2>ドラム形状</h2>
+        <div class="box">
+          <div class="flex column">
+            <h5>ダイヤモンド型</h5>
+            <Image src={diamondShape} alt="diamondShape" width="230px" height="auto" />
+            <p>ドラム形状の定番として一般的な形状で、リズミカルな上げ下げが可能なドラム。</p>
+          </div>
+        </div>
+        <div >
+          <h4>自動イカ釣り機の仕組み</h4>
+          <div class="flex">
+            <div class="box">
+              <h5>大幅な 省力化を実現。</h5>
+              <p>
+                最大64台のイカ釣機を
+                ブリッジ内で制御可能。
+                疲れ知らず、連続運転可能。
+              </p>
+            </div>
+            <div class="box">
+              <h5>熟練の技を 再現。</h5>
+              <p>
+                シャクリをコンピューター制御。
+                船の揺れをセンシング。
+                糸の張り具合を自動調整。
+              </p>
+            </div>
+            <div class="box">
+              <h5>トラブル を最小限に。</h5>
+              <p>
+                Various features to prevent line tangling.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+	</main>
+</Layout>
+
+
+<style >
+  h1 {
+    text-decoration: var(--accent-blue) underline;
+  }
+</style>

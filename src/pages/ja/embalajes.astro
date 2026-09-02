@@ -1,0 +1,70 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import SubNav from '../../components/SubNav.astro';
+import { Image } from 'astro:assets';
+import "./pageStyles.css";
+import Maintenance from '../../components/Maintnance.astro';
+import reparacion1 from '../../assets/images/reparacion1.jpeg';
+import sq800 from '../../assets/images/strapaq-SQ-800.jpg';
+import lq400 from '../../assets/images/iQ-400.jpg';
+import jk5000 from '../../assets/images/JK-5000.jpg';
+import rq7000 from '../../assets/images/RQ7000M.jpg';
+import strapaqlogo from '../../assets/images/Strapack-Logo.png';
+const tags = ['sanko', 'ギロコンパスとロボット', 'mar del plata', 'hamade', 'イカ', "エンブレム"];
+---
+
+<Layout title="エンブレム" description="エンブレム" tags={tags} color="var(--accent-blue)">
+	<main>
+    <section>
+      <div class="content">
+        <h1>エンブレム</h1>
+        <p class="instructions">
+私たちは、以下の団体の代表者です  <a href="https://strapack.com/" target="_blank">Strapack</a>, 製品の品質と信頼性で定評のある企業です。同社の優れた梱包機シリーズは、効率的で耐久性に優れた梱包ソリューションを提供し、さまざまな産業用途において卓越した性能を発揮します。        </p>
+        <SubNav links={[{ text: "設備", href: "#equipos" }, { text: "交換用部品", href: "#repuestos" }]} />
+      </div>
+
+      <br id="equipos">
+
+      <div class="content content-cards">
+        <div class="flex marca">
+          <Image  src={strapaqlogo} style={{backgroundColor: "white", borderRadius: "5px"}} alt="Strapaq" width="200px" height="auto" />
+        </div>
+        <ProductCard style="full" color="var(--accent-blue)" title="SQ-800" image={sq800} alt="sq800" subject="Strapaq sq800">
+          <p>
+ブラシレスDCモーターを搭載したSQ-800。SQ-800は、定評のあるRQ-8xシリーズの信頼性を損なうことなく、より高い効率を実現します。張力をかけた状態でも、標準的な結束速度は55本/分です。25秒未満で稼働準備が整うため、包装ラインの効率向上に貢献します。SQ-800は、用途の要件に応じて選択可能な、さまざまな張力制御モードを備えています。デジタル制御のテンションダイヤルにより、幅広いテンション範囲を設定可能です。最大テンション能力は80kgfまたは176lbf（ストローク150mmまたは6”相当）です。市場に出回っている他の多くの機械とは異なり、テンションを調整してもサイクル速度が低下することはありません。
+          </p>
+        </ProductCard>
+        <ProductCard style="full" color="var(--accent-blue)" title="IQ-400" image={lq400} alt="lq400" subject="Strapaq LQ-400">
+          <p> 
+StraPack社の新型半自動ストラップ機「iQ-400」をご紹介します。本機はデュアルテンションモードを搭載しており、スイッチを切り替えるだけで幅広い用途に対応可能です。iQ-400は、さまざまな過酷な環境にも耐えられるよう設計された、耐久性に優れたヘビーデューティー仕様のストラップ機です。動作音が驚くほど静かで、オフィスでの使用にも最適です。iQ-400は可動部品が少ないため、メンテナンスが容易で、運用コストを低く抑えることができます。すべての電気部品は機械の片側に配置され、キャビネット内に収納されているため、メンテナンスが容易で、重要な部品を保護することができます。トルクテンションモードは、より強い張力が必要な場合や、圧縮可能な梱包を結束するのに適しており、ストロークテンションモードは、穏やかな張力や迅速な操作に最適です。
+          </p>
+        </ProductCard>
+        <ProductCard style="full" color="var(--accent-blue)" title="JK-5000" image={jk5000} alt="jk5000" subject="Strapaq JK-5000">
+          <p>
+StraPack社のJK-5は大幅に改良され、手頃な価格を維持したままJK-5000へと生まれ変わりました。JK-5000は、1分間に最大37本のストラップを処理できる一方で、110ボルトの電源、5mmから15.5mm（5/8インチ）までの簡単なストラップ幅調整、自動再供給、ループ排出機能、コンパクトな設置面積など、JK-5のすべての利点を維持しています。JK-5000のもう一つの新機能は、重要な電気的機能を継続的に監視する自己診断機能付きプログラマブルマイクロプロセッサです。電気的な問題が発生した場合、監視パネルに直ちに影響を受けた機能が表示されるため、トラブルシューティングの推測作業が不要となり、復旧作業がより効率的になります。
+          </p>
+        </ProductCard>
+        <ProductCard style="full" color="var(--accent-blue)" title="RQ7000M" image={rq7000} alt="rq7000" subject="Strapaq RQ7000M">
+          <p> 
+RQ7000Mは、RQ7000の先進的な高速シーリングヘッド、湿気の多い環境でも耐えるAQ-7Mの耐久性、そしてストラップの自動装填、再供給、ループ排出など、ベストセラーの自動機RQ-8の機能のほとんどを兼ね備えています。RQ7000Mは、1分間に50本のストラップを処理可能（1サイクルあたり1.2秒）であり、同種の機械の中でも最速クラスの速度を誇ります。永久潤滑機構、サイドシール設計、ステンレス鋼製の本体部品により、RQ7000Mは過酷な環境下での使用に最適な機械となっています。全自動仕様もご用意しています。
+          </p>
+        </ProductCard>
+      </div>
+    </section>
+
+
+    <Maintenance id="repuestos" color="var(--accent-blue)" subject="Repuestos, pesca de calamar (web)" title="Spare Parts" image={reparacion1} alt="repuestos">
+      <p>
+当社は交換用部品の直販業者です。詳細については、お気軽にお問い合わせください。
+      </p>
+    </Maintenance>
+
+	</main>
+</Layout>
+
+<style >
+  h1 {
+    text-decoration: var(--accent-blue) underline;
+  }
+</style>

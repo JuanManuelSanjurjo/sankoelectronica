@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import "./pageStyles.css";
+import CategoryCard from '../../components/CategoryCard.astro';
+import SubNav from '../../components/SubNav.astro';
+import Maintenance from '../../components/Maintnance.astro';
+import reparacion1 from '../../assets/images/reparacion1.jpeg';
+import koden from '../../assets/images/koden-logo.png';
+import chartplotter from '../../assets/images/chart-plotter-GTD-120.jpg';
+import echosounders from '../../assets/images/echo-sounder-cvs-128b.png';
+import gpsnavigators from '../../assets/images/gps-krd-10.png';
+import imoproducts from '../../assets/images/IMO-kat-330.jpg';
+import multifunctiondisplays from '../../assets/images/displays-KSD-1210.png';
+import gpsbuoy from '../../assets/images/buoy-PKP-27.png';
+import radar from '../../assets/images/radar.jpg';
+import sonar from '../../assets/images/sonar.png';
+
+const tags = ['sanko', '海軍用電子機器','チャートプロッター', 'mar del plata', 'レーダー', 'ソナー','MDC-5240', 'ESR-145'];
+---
+
+<Layout title="海軍用電子機器" description="海軍用電子機器" tags={tags}  color="var(--accent-blue)" >
+	<main>
+    <section>
+      <div class="content">
+        <h1>海軍用電子機器</h1>
+        <p class="instructions">
+私たちは、以下の団体の代表者です  <a href="https://www.koden-electronics.co.jp/en" target="_blank">Koden</a>, 世界中で、多種多様な高品質な技術製品で知られる企業です。当社は、ボートや釣りなどの分野における最も厳しいニーズに応えるよう設計された、同社の革新的な製品ラインの中から厳選した商品を取り揃えており、高い性能と信頼性を保証しています。        </p>
+        <SubNav links={[{ text: "設備", href: "#equipos" }, {text: "保守・修理", href: "#reparaciones"}]} />
+      </div>
+
+      <br id="equipos">
+
+      <div class="content content-cards">
+        <div class="flex marca">
+          <Image  src={koden} alt="Hamade" width="200px" height="auto" />
+        </div>
+        <div class="categorie-container">
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/gtd-enmarine" title="チャートプロッター" image={chartplotter} alt="Chart Plotter" subject="Chart Plotter (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/cvs-enmarine" title="エコーサウンダー" image={echosounders} alt="Echo Sounders" subject="Echo Sounders (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/gps-enmarine" title="GPSナビゲーター、センサー、およびリモートディスプレイ" image={gpsnavigators} alt="GPS Navigators, Sensors & Remote displays" subject="GPS Navigators, Sensors & Remote displays (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/imo-enmarine" title="IMO製品" image={imoproducts} alt="IMO Products" subject="IMO Products (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/mdc-enmarine" title="船舶用レーダーおよびRADARpc" image={radar} alt="Marine Radars & RADARpc" subject="Marine Radars & RADARpc (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/esr-enmarine" title="ソナー" image={sonar} alt="Sonars" subject="Sonars (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/mfd-enmarine" title="多機能ディスプレイ" image={multifunctiondisplays} alt="Multi Function Displays" subject="Multi Function Displays (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/kgv-enmarine" title="GPSブイ" image={gpsbuoy} alt="GPS Buoy" subject="GPS Buoy (web)" />
+        </div>
+      </div>
+    </section>
+
+
+
+    <Maintenance id="reparaciones" color="var(--accent-blue)" subject="Mantenimiento preventivo y reparaciones, pesca de calamar (web)" title="Maintenance and Repairs" image={reparacion1} alt="reparaciones">
+      <p>
+当社は、あらゆる機器の予防保全および修理を行っています。
+      </p>
+    </Maintenance>
+
+
+	</main>
+</Layout>
+
+<style >
+  h1 {
+    text-decoration: var(--accent-blue) underline;
+  }
+</style>
