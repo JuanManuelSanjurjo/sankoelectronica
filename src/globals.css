@@ -44,14 +44,15 @@ html,
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
 }
 html {
   font-family: system-ui, sans-serif;
-  background: white;
+  background-color: var(--frame);
   min-height: 100vh;
   font-size: 16px; /* tamaño base para los demas textos de la pagina*/
+  scroll-behavior: smooth;
 }
+
 body {
   color: var(--black);
   color: white;
@@ -156,12 +157,7 @@ ul {
   :root {
     --p: 0.9rem;
   }
-  *.not(.navbar),
-  *::before,
-  *::after {
-    animation: none;
-    transition: none;
-  }
+
   body {
     font-size: 14px;
   }

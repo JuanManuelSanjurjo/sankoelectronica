@@ -7,7 +7,7 @@ h5 {
   border-bottom: 1px solid white;
   padding-bottom: 0.6rem;
 }
-section a:hover{
+section a:hover {
   text-decoration: none;
 }
 p > a {
@@ -20,7 +20,7 @@ p > a:hover {
   padding-top: 10rem;
 }
 .flex {
-  display: flex;  
+  display: flex;
   align-items: center;
   align-items: stretch;
   gap: 2rem;
@@ -45,15 +45,15 @@ p > a:hover {
   gap: 2rem;
 }
 .small {
-  padding: 0.3rem 0.7rem ;
+  padding: 0.3rem 0.7rem;
   font-size: 0.7rem;
   width: 100%;
 }
 .secondary-btn {
   background-color: transparent;
-  outline:  2px solid var(--accent-blue);
+  outline: 2px solid var(--accent-blue);
   outline-offset: -2px;
-} 
+}
 .secondary-btn:hover {
   background-color: var(--accent-blue);
   color: white;
@@ -62,15 +62,18 @@ p > a:hover {
   background-color: var(--frame);
   border-right: 2px solid var(--accent-blue);
 }
-.marca{
+.marca {
   background-color: var(--frame);
   padding: 2rem;
 }
 .box {
   border: 1px solid white;
-  padding: 2rem ;
+  padding: 1.5rem;
   align-self: stretch;
   flex-grow: 2;
+}
+.flex > .box {
+  max-width: 33%;
 }
 
 @media (max-width: 1150px) {
@@ -80,5 +83,8 @@ p > a:hover {
   .box {
     padding: 2rem;
     min-height: unset;
+  }
+  .flex > .box {
+    max-width: 100%;
   }
 }

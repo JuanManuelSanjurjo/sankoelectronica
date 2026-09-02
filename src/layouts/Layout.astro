@@ -13,7 +13,7 @@ const { title, color, description, keywords } = Astro.props;
 <html lang="en">
   <CommonHead title={title} description={description} keywords={keywords} />
   <body>
-    <Navbar color={color} transition:persist />
+    <Navbar color={color} transition:persist  />
 		<slot />
     <Footer />
     <SideDecoration color={color} />

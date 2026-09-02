@@ -11,18 +11,18 @@ import lq400 from '../../assets/images/iQ-400.jpg';
 import jk5000 from '../../assets/images/JK-5000.jpg';
 import rq7000 from '../../assets/images/RQ7000M.jpg';
 import strapaqlogo from '../../assets/images/Strapack-Logo.png';
-const tags = ['sanko', 'electronica', 'naval', 'mar del plata', 'strapaq', 'sq800'];
+const tags = ['sanko', 'electronics', 'naval', 'mar del plata', 'strapack', 'sq800', "packaging"];
 ---
 
-<Layout title="Embalajes" description="Embalajes" tags={tags} color="var(--accent-blue)">
+<Layout title="Packaging" description="Packaging" tags={tags} color="var(--accent-blue)">
 	<main>
     <section>
       <div class="content">
-        <h1>Embalajes</h1>
+        <h1>Packaging</h1>
         <p class="instructions">
-Somos representantes de <a href="https://strapack.com/" target="_blank">Strapack</a>, una empresa reconocida por la calidad y confiabilidad de sus productos. Su destacada línea de máquinas sunchadoras (strapping) ofrece soluciones eficientes y duraderas para el embalaje, asegurando un rendimiento superior en diversas aplicaciones industriales.
+We are representatives of <a href="https://strapack.com/" target="_blank">Strapack</a>, a company renowned for the quality and reliability of its products. Its outstanding line of strapping machines offers efficient and durable packaging solutions, ensuring superior performance in a variety of industrial applications.
         </p>
-        <SubNav links={[{ text: "Equipos", href: "#equipos" }, { text: "Repuestos", href: "#repuestos" }]} />
+        <SubNav links={[{ text: "Equipment", href: "#equipos" }, { text: "Spare Parts", href: "#repuestos" }]} />
       </div>
 
       <br id="equipos">
@@ -33,7 +33,9 @@ Somos representantes de <a href="https://strapack.com/" target="_blank">Strapack
         </div>
         <ProductCard style="full" color="var(--accent-blue)" title="SQ-800" image={sq800} alt="sq800" subject="Strapaq sq800">
           <p>
-         StraPack’s JK-5 has been improved considerably and transformed into the JK-5000 with the same affordability. The JK-5000 can achieve up to 37 straps/minute, while maintaining all the benefits of the JK-5, such as a 110 Volt power supply, simple strap width adjustment from 5mm to 15.5mm (5/8in), auto re-feed, loop ejection and small footprint. Another new feature to the JK-5000 is a self-diagnostic programmable microprocessor which continuously monitors critical electrical functions. Should an electrical problem arise, the monitoring panel immediately displays the function affected to take the guess work out of troubleshooting, making restoration more efficient.
+ The SQ-800 with brushless DC motor. The SQ-800 provides better efficiency without compromising the reliability of the legendary RQ-8x.
+Standard strapping rate is 55 straps/min, even when tension is applied. The machine is ready to operate in less than 25 seconds, contributing to increased packaging line efficiencies.
+The SQ-800 offers different modes of tensioning system which can be selected according to the application requirements. A wide range of tension is available via a digitally controlled tension dial.  Tension capability is up to 80kgf or 176lbf (equivalent of 150mm or 6” stroke). Unlike many other machines in the market, tension does not compromise the cycle speed.
           </p>
         </ProductCard>
         <ProductCard style="full" color="var(--accent-blue)" title="IQ-400" image={lq400} alt="lq400" subject="Strapaq LQ-400">
@@ -54,8 +56,10 @@ Somos representantes de <a href="https://strapack.com/" target="_blank">Strapack
     </section>
 
 
-    <Maintenance id="repuestos" color="var(--accent-blue)" subject="Repuestos, embalajes (web)" title="Repuestos" image={reparacion1} alt="repuestos">
-      <p>Somos proveedores directos de repuestos. Contactese con nosotros para obtener más información.</p>
+    <Maintenance id="repuestos" color="var(--accent-blue)" subject="Repuestos, pesca de calamar (web)" title="Spare Parts" image={reparacion1} alt="repuestos">
+      <p>
+        We are direct suppliers of replacement parts. Please contact us for more information.
+      </p>
     </Maintenance>
 
 	</main>

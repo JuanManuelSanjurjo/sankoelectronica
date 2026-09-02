@@ -2,7 +2,17 @@
 import { Image } from 'astro:assets';
 import ContactButton from './ContactButton.astro';
 import SecondaryButton from './SecondaryButton.astro';
-const { title, image, alt, subject, style, imgWidth, color, href } = Astro.props;
+const { title, image, alt, subject, style, imgWidth, color, href} = Astro.props;
+// 1. Obtener la ruta limpia que causó el error (ej: "/en/lo-que-sea")
+const { pathname } = Astro.url;
+
+// 2. Comprobar si la ruta empieza con el prefijo de tu idioma secundario
+//    (Si tienes más idiomas, puedes usar un array y verificar con .includes())
+const isEnglish = pathname.startsWith('/en/') || pathname === '/en';
+const isJapanese = pathname.startsWith('/ja/') || pathname === '/ja';
+
+// 3. Establecer el idioma definitivo de forma manual
+const currentLang = isEnglish ? 'en' : isJapanese ? 'ja' : 'es';
 ---
 
 <div class={`equipo ${style}`}>
@@ -13,9 +23,9 @@ const { title, image, alt, subject, style, imgWidth, color, href } = Astro.props
   </div>
   <div class="flex">
     { href &&
-    <SecondaryButton href={href} subject={subject}>INFO</SecondaryButton>
+    <SecondaryButton href={href} subject={subject}>{currentLang === "ja" ? "情報" :"Info"}</SecondaryButton>
     }
-    <ContactButton subject={subject} />
+    <ContactButton subject={subject}>{currentLang === "en" ? "Contact" : currentLang === "ja" ? "連絡" : "Consultar"}</ContactButton>
   </div>
 </div>
 

@@ -1,7 +1,7 @@
 ---
+import Layout from '../../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import "./pageStyles.css";
-import Layout from '../../layouts/Layout.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 import SubNav from '../../components/SubNav.astro';
 import Maintenance from '../../components/Maintnance.astro';
@@ -16,25 +16,25 @@ import gpsbuoy from '../../assets/images/buoy-PKP-27.png';
 import radar from '../../assets/images/radar.jpg';
 import sonar from '../../assets/images/sonar.png';
 
-const tags = ['sanko', 'electronica', 'naval', 'mar del plata', 'radar', 'sonar','MDC-5240', 'ESR-145'];
+const tags = ['sanko', 'electronics', 'naval','chart plotter', 'mar del plata', 'radar', 'sonar','MDC-5240', 'ESR-145'];
 ---
 
-<Layout title="Electronica Naval" description="Electronica Naval" tags={tags}  color="var(--accent-blue)" >
+<Layout title="Naval Electronics" description="Naval Electronics" tags={tags}  color="var(--accent-blue)" >
 	<main>
     <section>
       <div class="content">
-        <h1>Electronica Naval</h1>
+        <h1>Naval Electronics</h1>
         <p class="instructions">
-        We are representatives of <a href="https://www.koden-electronics.co.jp/en" target="_blank">Koden</a>, A company recognized worldwide for its wide variety of high-quality technological products. We offer a selection from its innovative line, designed to meet the most demanding needs in sectors such as navigation and fishing, guaranteeing performance and reliability.
+We are representatives of <a href="https://www.koden-electronics.co.jp/en" target="_blank">Koden</a>, a company recognized worldwide for its wide variety of high-quality technological products. We offer a selection from its innovative product line, designed to meet the most demanding needs in sectors such as boating and fishing, ensuring performance and reliability.
         </p>
-        <SubNav links={[{ text: "Equipment", href: "#equipos" }, {text: "Maintenance and repairs", href: "#reparaciones"}]} />
+        <SubNav links={[{ text: "Equipment", href: "#equipos" }, {text: "Maintenance and Repairs", href: "#reparaciones"}]} />
       </div>
 
       <br id="equipos">
 
       <div class="content content-cards">
         <div class="flex marca">
-          <Image  src={koden} alt="Hamade" width="200" height="auto" />
+          <Image  src={koden} alt="Hamade" width="200px" height="auto" />
         </div>
         <div class="categorie-container">
           <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/gtd-enmarine" title="Chart Plotters" image={chartplotter} alt="Chart Plotter" subject="Chart Plotter (web)" />
@@ -50,9 +50,13 @@ const tags = ['sanko', 'electronica', 'naval', 'mar del plata', 'radar', 'sonar'
     </section>
 
 
-    <Maintenance id="reparaciones" color="var(--accent-blue)" subject="Repuestos, electronica naval (web)" title="Mantenimiento y reparaciones" image={reparacion1} alt="Repuestos">
-      Realizamos mantenimientos preventivos y reparaciones de todas las unidades de pesca de calamar.
+
+    <Maintenance id="reparaciones" color="var(--accent-blue)" subject="Mantenimiento preventivo y reparaciones, pesca de calamar (web)" title="Maintenance and Repairs" image={reparacion1} alt="reparaciones">
+      <p>
+        We perform preventive maintenance and repairs on all equipment.
+      </p>
     </Maintenance>
+
 
 	</main>
 </Layout>

@@ -1,12 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import ProductCard from '../components/ProductCard.astro';
+import "./pageStyles.css";
 import CategoryCard from '../components/CategoryCard.astro';
 import SubNav from '../components/SubNav.astro';
 import Maintenance from '../components/Maintnance.astro';
 import reparacion1 from '../assets/images/reparacion1.jpeg';
-import "./pageStyles.css";
 import koden from '../assets/images/koden-logo.png';
 import chartplotter from '../assets/images/chart-plotter-GTD-120.jpg';
 import echosounders from '../assets/images/echo-sounder-cvs-128b.png';
@@ -38,21 +37,21 @@ const tags = ['sanko', 'electronica', 'naval', 'mar del plata', 'radar', 'sonar'
           <Image  src={koden} alt="Hamade" width="200px" height="auto" />
         </div>
         <div class="categorie-container">
-          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/gtd-enmarine" title="Chart Plotters" image={chartplotter} alt="Chart Plotter" subject="Chart Plotter (web)" />
-          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/cvs-enmarine" title="Echo Sounders" image={echosounders} alt="Echo Sounders" subject="Echo Sounders (web)" />
-          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/gps-enmarine" title="GPS Navigators, Sensors & remote displays" image={gpsnavigators} alt="GPS Navigators, Sensors & Remote displays" subject="GPS Navigators, Sensors & Remote displays (web)" />
-          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/imo-enmarine" title="IMO Products" image={imoproducts} alt="IMO Products" subject="IMO Products (web)" />
-          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/mdc-enmarine" title="Marine Radars & RADARpc" image={radar} alt="Marine Radars & RADARpc" subject="Marine Radars & RADARpc (web)" />
-          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/esr-enmarine" title="Sonars" image={sonar} alt="Sonars" subject="Sonars (web)" />
-          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/mfd-enmarine" title="Multi Function Displays" image={multifunctiondisplays} alt="Multi Function Displays" subject="Multi Function Displays (web)" />
-          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/kgv-enmarine" title="GPS Buoy" image={gpsbuoy} alt="GPS Buoy" subject="GPS Buoy (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/gtd-enmarine" title="Plotters Cartofráficos" image={chartplotter} alt="Chart Plotter" subject="Chart Plotter (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/cvs-enmarine" title="Ecosondas" image={echosounders} alt="Echo Sounders" subject="Echo Sounders (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/gps-enmarine" title="Navegadores GPS, Sensores & displays remotos" image={gpsnavigators} alt="GPS Navigators, Sensors & Remote displays" subject="GPS Navigators, Sensors & Remote displays (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/imo-enmarine" title="Productos IMO" image={imoproducts} alt="IMO Products" subject="IMO Products (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/mdc-enmarine" title="Radares & RADARpc" image={radar} alt="Marine Radars & RADARpc" subject="Marine Radars & RADARpc (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/esr-enmarine" title="Sonares" image={sonar} alt="Sonars" subject="Sonars (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/kgv-enmarine" title="Boya GPS" image={gpsbuoy} alt="GPS Buoy" subject="GPS Buoy (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/mfd-enmarine" title="Displays Multifuncionales" image={multifunctiondisplays} alt="Multi Function Displays" subject="Multi Function Displays (web)" />
         </div>
       </div>
     </section>
 
 
     <Maintenance id="reparaciones" color="var(--accent-blue)" subject="Repuestos, electronica naval (web)" title="Mantenimiento y reparaciones" image={reparacion1} alt="Repuestos">
-      Realizamos mantenimientos preventivos y reparaciones de todas las unidades de pesca de calamar.
+      Realizamos mantenimientos preventivos y reparaciones de todas las unidades.
     </Maintenance>
 
 	</main>
