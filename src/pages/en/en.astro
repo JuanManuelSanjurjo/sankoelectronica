@@ -1,0 +1,244 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ButtonNav from '../components/ButtonNav.astro';
+
+const sections = [
+  { id: 'business', name: 'Business' },
+  { id: 'about', name: 'About' },
+  { id: 'partners', name: 'Partners' },
+];
+const tags = ['sanko', 'electronica', 'naval', 'embalajes', 'girocompas', 'mar del plata', 'autopiloto', 'radar', 'sonar','sq800', 'pesca', 'calamar'];
+---
+
+<Layout title="Sanko Electronica" description="Inicio Sanko Electronica" tags={tags}>
+  <ButtonNav sections={sections} />
+	<main>
+    <section id="business">
+        <nav>
+          <a href="/hamade" class="nav-item">Hamade</a>
+          <a href="/pesca-de-calamar" class="nav-item">Pesca de Calamar</a>
+          <a href="/embalajes" class="nav-item">Embalajes</a>
+          <a href="electronica-naval" class="nav-item">Electronica naval</a>
+          <a href="girocompases-y-autopilotos" class="nav-item">Girocompases y autopilotos</a>
+        </nav>
+    </section>
+    <section id="about">
+      <div class="content">
+        <h1>Sobre Nosotros</h1>
+        <p class="glass">
+     En Sanko Electrónica, con sede en Mar del Plata, trabajamos desde 1977 brindando soluciones integrales para la industria pesquera. Nos especializamos en la provisión de maquinaria, mantenimiento, reparación y repuestos para la pesca de calamar; máquinas sunchadoras; y la venta de girocompases, autopilotos y equipos de electrónica naval como sonares, radares y GPS. Representamos a marcas líderes japonesas reconocidas mundialmente por su calidad y confiabilidad, consolidándonos como referentes en el sector.
+        </p>
+      </div>
+    </section>
+    <section id="partners">
+      <div class="content">
+        <h1>Quienes confian en nosotros</h1>
+        <p class="glass">
+Gracias a nuestra experiencia y tradición en el sector, en Sanko Electrónica contamos con una amplia base de clientes que confían en nuestros servicios y productos. Esto, a su vez, nos ha llevado a establecer relaciones sólidas con reconocidas marcas, que confían en nosotros para representarlas en el mercado.
+        </p>
+      </div>
+    </section>
+	</main>
+</Layout>
+
+<style >
+  .flags{
+    display:flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 0;
+  }
+  a{
+    text-decoration: none;
+  }
+  #business {
+    padding-block: unset;
+    display: initial;
+  }
+  section{
+    padding-block: unset;
+    display: flex;
+  }
+  h1 {
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    background-color: var(--frame);
+    background-color: var(--blue);
+    padding: 2rem;
+  }
+  .content p {
+    padding: 4rem 2rem;
+  }
+  main {
+    background-image:
+      linear-gradient(to bottom, rgba(0,110,240,0.3), rgba(256,0,0, 0.10)),
+      url("../assets/images/barcos1.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+    background: unset;
+    background-color: var(--frame);
+  }
+  section {
+     padding-block: 100px
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    pointer-events: none;
+    user-select: none;
+    transition: 500ms ease-in-out;
+  }
+
+nav:has(:nth-child(1):hover) {
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+}
+
+nav:has(:nth-child(2):hover) {
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+}
+
+nav:has(:nth-child(3):hover) {
+  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+}
+
+nav:has(:nth-child(4):hover) {
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
+}
+nav:has(:nth-child(5):hover) {
+  grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+}
+
+.nav-item {
+  position: relative;
+  padding: 30px;
+  height: 92vh;
+  /* font-size: 34px; */
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background-size: cover;
+  pointer-events: auto;
+  display: flex;
+  z-index: 1;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* text-align: center; */
+  /* text-shadow: 3px 3px 3px #000; */
+  writing-mode: vertical-rl;
+  font-size: clamp(1.5rem, 5vh, 4rem);
+  font-stretch: semi-condensed;
+  line-height: 5rem;
+  text-shadow: 4px 2px  var(--blue);
+  border-right: 10px solid color-mix(in hsl, var(--frame) 85%, transparent);
+  /* font-size: 60px; */
+  /* line-height: 3.5rem; */
+  /* font-weight: 700; */
+}
+
+.nav-item::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  opacity: 0.94;
+  background-color: var(--frame);
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* .nav-item:nth-child(1)::after { */
+/*     background-color: rgba(0, 100, 250, 0.25); */
+/* } */
+/* .nav-item:nth-child(2)::after { */
+/*     background-color: var(--accent-red); */
+/* } */
+/* .nav-item:nth-child(3)::after { */
+/*     background-color: var(--accent-green); */
+/* } */
+/* .nav-item:nth-child(4)::after { */
+/*     background-color: var(--accent-yellow); */
+/* } */
+/* .nav-item:nth-child(5)::after { */
+/*     background-color: var(--accent-blue); */
+  /* } */
+
+.nav-item:hover::after {
+  opacity: 0.5;
+}
+
+.nav-item:nth-child(1) {
+  background-image: url("https://www.mardelplata.com/wp-content/uploads/2022/01/img.jpg");
+}
+.nav-item:nth-child(2) {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREz2r1FRsZroUifmCmvwDz8yjjkPjV4sJLfA&s");
+}
+.nav-item:nth-child(3) {
+  background-image: url("https://sym-naval.com/wp-content/uploads/2023/12/reparacion-naval.jpg");
+}
+
+.nav-item:nth-child(4) {
+  background-image: url("https://assets.isu.pub/document-structure/230415154704-268967766751c96014e65ecdc9c5a61f/v1/3a5e70fd62fa4547182a427a9e0f1377.jpeg");
+}
+
+.nav-item:nth-child(5) {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREz2r1FRsZroUifmCmvwDz8yjjkPjV4sJLfA&s");
+}
+
+  /* Mobile */ 
+ @media (max-width: 1345px) {
+   .flags{
+      display: none;
+    }
+    h1 {
+      padding: 2rem;
+    }
+    h1 span {
+      display: none;
+    }
+  } 
+  @media (max-width: 1150px) { 
+    h1{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    } 
+    .content p {
+      padding: 2rem 1rem;
+    }
+
+    nav {
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    }
+    .nav-item {
+      height: unset;
+      justify-content: flex-start;
+      padding: 10px;
+      align-items: flex-end;
+      writing-mode: unset;
+      font-size: 24px;
+      line-height: unset;
+      border-right: unset;
+      border-bottom: 10px solid color-mix(in hsl, var(--frame) 85%, transparent);
+    }
+   
+    /* Desactivar hover manualmente en móviles */
+    nav:has(:nth-child(1):hover),
+    nav:has(:nth-child(2):hover),
+    nav:has(:nth-child(3):hover),
+    nav:has(:nth-child(4):hover),
+    nav:has(:nth-child(5):hover) {
+      grid-template-columns: 1fr ;
+    }
+  }
+</style>

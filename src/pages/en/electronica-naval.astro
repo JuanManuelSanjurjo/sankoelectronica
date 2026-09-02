@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import "./pageStyles.css";
+import Layout from '../../layouts/Layout.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+import SubNav from '../../components/SubNav.astro';
+import Maintenance from '../../components/Maintnance.astro';
+import reparacion1 from '../../assets/images/reparacion1.jpeg';
+import koden from '../../assets/images/koden-logo.png';
+import chartplotter from '../../assets/images/chart-plotter-GTD-120.jpg';
+import echosounders from '../../assets/images/echo-sounder-cvs-128b.png';
+import gpsnavigators from '../../assets/images/gps-krd-10.png';
+import imoproducts from '../../assets/images/IMO-kat-330.jpg';
+import multifunctiondisplays from '../../assets/images/displays-KSD-1210.png';
+import gpsbuoy from '../../assets/images/buoy-PKP-27.png';
+import radar from '../../assets/images/radar.jpg';
+import sonar from '../../assets/images/sonar.png';
+
+const tags = ['sanko', 'electronica', 'naval', 'mar del plata', 'radar', 'sonar','MDC-5240', 'ESR-145'];
+---
+
+<Layout title="Electronica Naval" description="Electronica Naval" tags={tags}  color="var(--accent-blue)" >
+	<main>
+    <section>
+      <div class="content">
+        <h1>Electronica Naval</h1>
+        <p class="instructions">
+        We are representatives of <a href="https://www.koden-electronics.co.jp/en" target="_blank">Koden</a>, A company recognized worldwide for its wide variety of high-quality technological products. We offer a selection from its innovative line, designed to meet the most demanding needs in sectors such as navigation and fishing, guaranteeing performance and reliability.
+        </p>
+        <SubNav links={[{ text: "Equipment", href: "#equipos" }, {text: "Maintenance and repairs", href: "#reparaciones"}]} />
+      </div>
+
+      <br id="equipos">
+
+      <div class="content content-cards">
+        <div class="flex marca">
+          <Image  src={koden} alt="Hamade" width="200" height="auto" />
+        </div>
+        <div class="categorie-container">
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/gtd-enmarine" title="Chart Plotters" image={chartplotter} alt="Chart Plotter" subject="Chart Plotter (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/cvs-enmarine" title="Echo Sounders" image={echosounders} alt="Echo Sounders" subject="Echo Sounders (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/gps-enmarine" title="GPS Navigators, Sensors & remote displays" image={gpsnavigators} alt="GPS Navigators, Sensors & Remote displays" subject="GPS Navigators, Sensors & Remote displays (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/imo-enmarine" title="IMO Products" image={imoproducts} alt="IMO Products" subject="IMO Products (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/mdc-enmarine" title="Marine Radars & RADARpc" image={radar} alt="Marine Radars & RADARpc" subject="Marine Radars & RADARpc (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/esr-enmarine" title="Sonars" image={sonar} alt="Sonars" subject="Sonars (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/mfd-enmarine" title="Multi Function Displays" image={multifunctiondisplays} alt="Multi Function Displays" subject="Multi Function Displays (web)" />
+          <CategoryCard href="https://www.koden-electronics.co.jp/enmarine/kgv-enmarine" title="GPS Buoy" image={gpsbuoy} alt="GPS Buoy" subject="GPS Buoy (web)" />
+        </div>
+      </div>
+    </section>
+
+
+    <Maintenance id="reparaciones" color="var(--accent-blue)" subject="Repuestos, electronica naval (web)" title="Mantenimiento y reparaciones" image={reparacion1} alt="Repuestos">
+      Realizamos mantenimientos preventivos y reparaciones de todas las unidades de pesca de calamar.
+    </Maintenance>
+
+	</main>
+</Layout>
+
+<style >
+  h1 {
+    text-decoration: var(--accent-blue) underline;
+  }
+</style>

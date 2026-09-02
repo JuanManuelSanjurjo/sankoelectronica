@@ -1,18 +1,26 @@
 ---
+import ButtonNav from '../../components/ButtonNav.astro';
+import Layout from '../../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import logosanko from '../assets/images/sanko-logo-blanco.png';
-import Layout from '../layouts/Layout.astro';
-import ButtonNav from '../components/ButtonNav.astro';
+import logosanko from '../../assets/images/sanko-logo-blanco.png';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
 const sections = [
   { id: 'business', name: 'Business' },
   { id: 'about', name: 'About' },
   { id: 'partners', name: 'Partners' },
 ];
-const tags = ['sanko', 'electronica', 'naval', 'embalajes', 'girocompas', 'mar del plata', 'autopiloto', 'radar', 'sonar','sq800', 'pesca', 'calamar'];
+const tags = ['sanko', 'electronics', 'naval', 'packaging', 'gyrocompass', 'mar del plata', 'autopilot', 'radar', 'sonar', 'sq800', 'fishing', 'squid'];
+
+const calamarUrl = getRelativeLocaleUrl("en", "pesca-de-calamar");
+const navalUrl = getRelativeLocaleUrl("en", "electronica-naval");
+const packagingUrl = getRelativeLocaleUrl("en", "embalajes");
+const gyrocompassesUrl = getRelativeLocaleUrl("en", "girocompases-y-autopilotos");
+const hamadeUrl = getRelativeLocaleUrl("en", "hamade");
+
 ---
 
-<Layout title="Sanko Electronica" description="Inicio Sanko Electronica" tags={tags}>
+<Layout title="Sanko Electronics" description="Home Sanko Electronics" tags={tags}>
   <ButtonNav sections={sections} />
 	<main>
     <section id="business">
@@ -25,18 +33,27 @@ const tags = ['sanko', 'electronica', 'naval', 'embalajes', 'girocompas', 'mar d
         </div>
       </div>
         <nav>
-          <a href="/hamade" class="nav-item">Hamade</a>
-          <a href="/pesca-de-calamar" class="nav-item">Pesca de Calamar</a>
-          <a href="/embalajes" class="nav-item">Embalajes</a>
-          <a href="electronica-naval" class="nav-item">Electronica naval</a>
-          <a href="girocompases-y-autopilotos" class="nav-item">Girocompases y autopilotos</a>
+        <a href={hamadeUrl} class="nav-item">Hamade</a> 
+        <a href={calamarUrl} class="nav-item">
+          <span> Squid </span>
+          <span> fishing </span>
+        </a>
+        <a href={packagingUrl} class="nav-item">Packaging</a>
+        <a href={navalUrl} class="nav-item">
+          <span> Naval </span>
+          <span> Electronics </span>
+           </a>
+        <a href={gyrocompassesUrl} class="nav-item">
+          <span> Gyrocompasses </span>
+          <span> & autopilots </span>
+           </a>
         </nav>
     </section>
     <section id="about">
       <div class="content">
         <h1>Sobre Nosotros</h1>
         <p class="glass">
-     En Sanko Electrónica, con sede en Mar del Plata, trabajamos desde 1977 brindando soluciones integrales para la industria pesquera. Nos especializamos en la provisión de maquinaria, mantenimiento, reparación y repuestos para la pesca de calamar; máquinas sunchadoras; y la venta de girocompases, autopilotos y equipos de electrónica naval como sonares, radares y GPS. Representamos a marcas líderes japonesas reconocidas mundialmente por su calidad y confiabilidad, consolidándonos como referentes en el sector.
+At Sanko Electrónica, based in Mar del Plata, we have been providing comprehensive solutions for the fishing industry since 1977. We specialize in the supply of machinery, maintenance, repair, and spare parts for squid fishing; strapping machines; and the sale of gyrocompasses, autopilots, and marine electronic equipment such as sonar, radar, and GPS. We represent leading Japanese brands recognized worldwide for their quality and reliability, solidifying our position as a benchmark in the sector.
         </p>
       </div>
     </section>
@@ -44,7 +61,7 @@ const tags = ['sanko', 'electronica', 'naval', 'embalajes', 'girocompas', 'mar d
       <div class="content">
         <h1>Quienes confian en nosotros</h1>
         <p class="glass">
-Gracias a nuestra experiencia y tradición en el sector, en Sanko Electrónica contamos con una amplia base de clientes que confían en nuestros servicios y productos. Esto, a su vez, nos ha llevado a establecer relaciones sólidas con reconocidas marcas, que confían en nosotros para representarlas en el mercado.
+Thanks to our experience and long-standing tradition in the sector, at Sanko Electrónica we have a large customer base that trusts our services and products. This, in turn, has led us to establish strong relationships with renowned brands, who rely on us to represent them in the market.
         </p>
       </div>
     </section>

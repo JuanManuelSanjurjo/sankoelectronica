@@ -3,6 +3,7 @@ import { Image } from "astro:assets"
 import ContactButton from "./ContactButton.astro";
 import SecondaryButton from "./SecondaryButton.astro";
 const {href, title, image, alt, subject, style, color } = Astro.props;
+const currentLang = Astro.currentLocale || "es";
 ---
 
 <div class="category-card-container full">
@@ -10,8 +11,8 @@ const {href, title, image, alt, subject, style, color } = Astro.props;
   <div class="category-card">
     <p>{title}</p>
     <div class="buttons">
-      <SecondaryButton size="small" href={href}>Listado</SecondaryButton>
-      <ContactButton size="small" href={href}>Contactar</ContactButton>
+      <SecondaryButton size="small" href={href}>{currentLang === "en" ? "Listing" : currentLang === "ja" ? "一覧" : "Listado"}</SecondaryButton>
+      <ContactButton size="small" href={href}>{currentLang === "en" ? "Contact" : currentLang === "ja" ? "連絡" : "Contactar"}</ContactButton>
     </div>
   </div>  
 </div>

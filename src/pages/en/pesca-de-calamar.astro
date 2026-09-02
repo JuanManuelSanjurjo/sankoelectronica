@@ -1,0 +1,105 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import SubNav from '../../components/SubNav.astro';
+import Maintenance from '../../components/Maintnance.astro';
+import { Image } from 'astro:assets';
+import "./pageStyles.css";
+import hamade from '../../assets/images/hamade-my8.jpg';
+import hamadelogo from '../../assets/images/hamade-logo.png';
+import reparacion1 from '../../assets/images/reparacion1.jpeg';
+import diamondShape from "../../assets/images/diamond-shape.png";
+
+const tags = ['sanko', 'girocompas', 'mar del plata', 'hamade', 'calamar', 'my-8', 'my-18'];
+const subNavLinks =  [{ text: "Equipos", href: "#equipos" },{text: "Mantenimiento y reparaciones", href: "#reparaciones"}, { text: "Repuestos", href: "#repuestos" },{text: "Info", href:"#info"}]
+---
+
+<Layout title="Pesca de calamar" description="Pesca de calamar" tags={tags} color="var(--accent-blue)" >
+	<main>
+    <section >
+      <div class="content">
+        <h1>Pesca de calamar</h1>
+        <p class="instructions">
+        We are representatives of<a href="http://towa-denki.co.jp/en/" target="_blank">Hamade (TOWA DENKI SEISAKUSHO)</a>A company renowned for the quality of its products. Its reliability in the market is reflected in its outstanding line of specialized squid fishing equipment, designed to optimize efficiency and guarantee superior results.
+        </p>
+        <SubNav links={subNavLinks} />
+      </div>
+
+      <div id="equipos" class="content content-cards anchor-target">
+        <div class="flex marca"  >
+          <Image  src={hamadelogo} alt="Hamade" width="200px" height="auto" />
+        </div>
+        <ProductCard style="full" color="var(--accent-blue)" title="MY-8" image={hamade} alt="my-8" subject="Hamade MY-8 (web)">
+          <p> A new version of the squid fishing machine with the popular crystal control panel and increased functionality
+It is a simple fishing machine with its focus firmly on functionality.</p>
+        </ProductCard>
+        <ProductCard style="full" color="var(--accent-blue)" title="MY-18" image={hamade} alt="my-18" subject="Hamade MY-18 (web)">
+          <p> The latest model with the newly developped Triaxial GravitySensor. 30mm spindle and reinforced chain.
+          </p>
+        </ProductCard>
+      </div>
+
+      <div id="equipos2" class="content content-cards anchor-target">
+        <div class="flex marca"  >
+          <Image  src={hamadelogo} alt="Hamade" width="200px" height="auto" />
+        </div>
+        <ProductCard style="full" color="var(--accent-blue)" title="MY-8" image={hamade} alt="" subject="Hamade MY-8 (web)">
+          <p> A new version of the squid fishing machine with the popular crystal control panel and increased functionality
+It is a simple fishing machine with its focus firmly on functionality.</p>
+        </ProductCard>
+        <ProductCard style="full" color="var(--accent-blue)" title="MY-18" image={hamade} alt="" subject="Hamade MY-18 (web)">
+          <p> The latest model with the newly developped Triaxial GravitySensor. 30mm spindle and reinforced chain.
+          </p>
+        </ProductCard>
+      </div>
+
+    </section>
+
+    <Maintenance id="reparaciones" color="var(--accent-blue)" subject="Mantenimiento preventivo y reparaciones, pesca de calamar (web)" title="Mantenimiento y reparaciones" image={reparacion1} alt="reparaciones">
+      <p>Realizamos mantenimientos preventivos y reparaciones de todas las unidades de pesca de calamar.</p>
+    </Maintenance>
+
+    <Maintenance id="repuestos" color="var(--accent-blue)" subject="Repuestos, pesca de calamar (web)" title="Repuestos" image={reparacion1} alt="repuestos">
+      <p>Somos proveedores directos de repuestos. Contactese con nosotros para obtener más información.</p>
+    </Maintenance>
+
+    <section id="info" class="anchor-target">
+      <div class="content">
+        <h2>Drum shape</h2>
+        <div class="box">
+          <div class="flex column">
+              <h5>Diamond Shape</h5>
+              <Image src={diamondShape} alt="diamondShape" width="230px" height="auto" />
+            <p>A standard and common drum shape that allows for rhythmic up/down.</p>
+          </div>
+        </div>
+        <div >
+          <h4>Mechanism of Automatic Squid Jigging/Fishing Machine</h4>
+          <div class="flex">
+            <div class="box">
+              <h5>Significant labor savings</h5>
+              <p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
+            </div>
+            <div class="box">
+              <h5>Replicating the proficient techniques</h5>
+              <p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
+            </div>
+            <div class="box">
+              <h5>Minimizing troubles</h5>
+              <p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+	</main>
+</Layout>
+
+
+<style >
+  h1 {
+    text-decoration: var(--accent-blue) underline;
+  }
+</style>

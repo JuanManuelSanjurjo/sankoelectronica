@@ -1,0 +1,58 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import ProductCard from '../../components/ProductCard.astro';
+import SubNav from '../../components/SubNav.astro';
+import Maintenance from '../../components/Maintnance.astro';
+import reparacion1 from '../../assets/images/reparacion1.jpeg';
+import "./pageStyles.css";
+import tokyoKeiki from '../../assets/images/tokyo-keiki.webp';
+import autopiloto from '../../assets/images/autopiloto.jpg';
+import girocompas from '../../assets/images/girocompas.jpg';
+
+const tags = ['sanko', 'girocompas', 'mar del plata', 'autopiloto', 'tokyo keiki', 'keiki'];
+---
+
+<Layout title="Girocompases y Autopilotos" description="Girocompases y Autopilotos" tags={tags} color="var(--accent-blue)">
+	<main>
+    <section>
+      <div class="content">
+        <h1>Girocompases y Autopilotos</h1>
+        <p class="instructions">
+          Somos representantes de <a href="https://www.tokyokeiki.jp/e/" target="_blank">Tokyo Keiki</a>, una empresa de renombre mundial reconocida por su excelencia en sistemas de navegación. Nos especializamos en su línea de girocompases y autopilotos, productos diseñados con precisión y tecnología avanzada para garantizar un control y dirección óptimos en aplicaciones marítimas.
+        </p>
+        <SubNav links={[{ text: "Equipos", href: "#equipos" },{text: "Mantenimiento y reparaciones", href: "#reparaciones"}]} />
+      </div>
+
+      <br id="equipos">
+
+      <div class="content content-cards">
+        <div class="flex marca">
+          <Image  src={tokyoKeiki} alt="Hamade" width="200px" height="auto" />
+        </div>
+        <ProductCard href="https://www.tokyokeiki.jp/e/products/marine/pilot.html" style="full" color="var(--accent-blue)" title="Autopilotos" image={autopiloto} alt="Autopilot PR-9000" subject="Tokyo Keiki PR-9000 (web)">
+          <p> 
+            The marine autopilot receives signals from directional sensors such as the gyrocompass and uses them to automatically control the helm for navigation.
+          </p>
+        </ProductCard>
+        <ProductCard href="https://www.tokyokeiki.jp/e/products/detail.html?pdid=155" style="full" color="var(--accent-blue)" title="Girocompases" image={girocompas} alt="Gyrocompass" subject="Tokyo Keiki Gyrocompass (web)">
+          <p>
+            El girocompás es el principal instrumento para determinar direcciones, destacándose por su precisión y versatilidad. Es ideal para cualquier tipo de embarcación, desde pequeñas lanchas hasta grandes buques. Sus ventajas incluyen la capacidad de emitir señales direccionales a otros equipos, su instalación en cualquier lugar a bordo, y su inmunidad a interferencias magnéticas.
+          </p>
+        </ProductCard>
+      </div>
+    </section>
+
+
+    <Maintenance id="reparaciones" color="var(--accent-blue)" subject="Mantenimiento Girocompases y Autopilotos (web)" title="Mantenimiento y reparaciones" image={reparacion1} alt="reparaciones">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. st laborum.</p>
+    </Maintenance>
+
+	</main>
+</Layout>
+
+<style >
+  h1 {
+    text-decoration: var(--accent-blue) underline;
+  }
+</style>

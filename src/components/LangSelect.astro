@@ -1,0 +1,61 @@
+
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+// 1. Detectamos el idioma actual ('es', 'en' o 'ja')
+const idiomaActual = Astro.currentLocale || 'es'; 
+
+// 2. Extraemos la ruta limpia (quitamos el prefijo de idioma de la URL si existe)
+// Por ejemplo: si estás en "/en/hamade", esto lo limpia y te deja solo "hamade"
+const pathnameLimpio = Astro.url.pathname
+  .replace(new RegExp(`^/${idiomaActual}(/|$)`), '') // Elimina el prefijo actual (/en/ o /ja/)
+  .replace(/^\//, '');                               // Elimina cualquier barra diagonal inicial
+
+// 3. Calculamos la ruta equivalente exacta para cada uno de tus 3 idiomas
+const urlIngles = getRelativeLocaleUrl('en', pathnameLimpio);
+const urlEspanol = getRelativeLocaleUrl('es', pathnameLimpio);
+const urlJapones = getRelativeLocaleUrl('ja', pathnameLimpio);
+---
+
+<div class="language">
+  {/* Cambiamos las etiquetas <button> por enlaces <a> con estilo de botón para que funcionen de forma nativa */}
+  <a href={urlIngles} class:list={[{ 'active-lang': idiomaActual === 'en' }]}>EN</a>
+  <a href={urlEspanol} class:list={[{ 'active-lang': idiomaActual === 'es' }]}>ES</a>
+  <a href={urlJapones} class:list={[{ 'active-lang': idiomaActual === 'ja' }]}>JP</a>
+</div>
+
+<style>
+  .language {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  
+  /* Mantenemos tus estilos visuales intactos, adaptados a la etiqueta <a> */
+  .language a {
+    text-decoration: none;
+    background-color: var(--black);
+    padding: 6px 10px;
+    font-weight: 600;
+    font-size: 0.7rem;
+    border-radius: 3px;
+    color: inherit;
+    border: var(--blue) solid 1px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .language a:hover {
+    background-color: var(--blue);
+    color: white;
+  }
+
+  /* OPCIONAL: Clase visual para destacar el idioma que está activo en este momento */
+  .language a.active-lang {
+    background-color: var(--blue);
+    color: white;
+    pointer-events: none; /* Desactiva el click en el idioma actual */
+  }
+</style>
+

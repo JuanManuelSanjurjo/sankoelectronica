@@ -1,14 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import "./pageStyles.css"
+
+
+// 1. Obtener la ruta limpia que causó el error (ej: "/en/lo-que-sea")
+const { pathname } = Astro.url;
+
+// 2. Comprobar si la ruta empieza con el prefijo de tu idioma secundario
+//    (Si tienes más idiomas, puedes usar un array y verificar con .includes())
+const isEnglish = pathname.startsWith('/en/') || pathname === '/en';
+const isJapanese = pathname.startsWith('/ja/') || pathname === '/ja';
+
+// 3. Establecer el idioma definitivo de forma manual
+const currentLang = isEnglish ? 'en' : isJapanese ? 'ja' : 'es';
+const rootUrl = currentLang === "en" ? "/en" : currentLang === "ja" ? "/ja" : "/"
 ---
 
 <Layout title="Page not found"  >
 	<main>
     
     <div >
-      <h2>Pagina no encontrada</h2>
-      <a href="/" class="button secondary-btn">Volver</a>
+      <h2>{ currentLang === "en" ? "Page not found" : currentLang === "ja" ? "ページが見つかりません" : "Página no encontrada" }</h2>
+      <a href={rootUrl} class="button secondary-btn">{ currentLang === "en" ? "Go back" : currentLang === "ja" ? "ホームに戻る" : "Volver al inicio" }</a>
     </div>
 
 
