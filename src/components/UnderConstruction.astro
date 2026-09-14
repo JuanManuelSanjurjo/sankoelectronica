@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const { pathname } = Astro.url;
+
+const isEnglish = pathname.startsWith('/en/') || pathname === '/en';
+const isJapanese = pathname.startsWith('/ja/') || pathname === '/ja';
+
+const currentLang = isEnglish ? 'en' : isJapanese ? 'ja' : 'es';
+const rootUrl = currentLang === "en" ? "/en" : currentLang === "ja" ? "/ja" : "/"
+---
+
+<Layout title="Page not found"  >
+	<main>
+    
+    <div >
+      <h2>{ currentLang === "en" ? "Page under construction" : currentLang === "ja" ? "ページ作成中" : "Página en construcción" }</h2>
+      <a href={rootUrl} class="button secondary-btn">{ currentLang === "en" ? "Go back" : currentLang === "ja" ? "ホームに戻る" : "Volver al inicio" }</a>
+    </div>
+
+
+	</main>
+</Layout>
+
+<style >
+  main{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+</style>

@@ -22,7 +22,7 @@ const tags = ['sanko', 'electronics', 'naval', 'mar del plata', 'strapack', 'sq8
         <p class="instructions">
 We are representatives of <a href="https://strapack.com/" target="_blank">Strapack</a>, a company renowned for the quality and reliability of its products. Its outstanding line of strapping machines offers efficient and durable packaging solutions, ensuring superior performance in a variety of industrial applications.
         </p>
-        <SubNav links={[{ text: "Equipment", href: "#equipos" }, { text: "Spare Parts", href: "#repuestos" }]} />
+        <SubNav links={[{ text: "Equipment", href: "#equipos" }, { text: "Spare Parts", href: "#repuestos"}, {text: "Maintenance and Repairs", href: "#reparaciones"}]} />
       </div>
 
       <br id="equipos">
@@ -56,12 +56,15 @@ The SQ-800 offers different modes of tensioning system which can be selected acc
     </section>
 
 
-    <Maintenance id="repuestos" color="var(--accent-blue)" subject="Repuestos, pesca de calamar (web)" title="Spare Parts" image={reparacion1} alt="repuestos">
+    <Maintenance id="repuestos" color="var(--accent-blue)" subject="Mantenimiento, embalajes (web)" title="Spare Parts" image={} alt="repuestos">
       <p>
         We are direct suppliers of replacement parts. Please contact us for more information.
       </p>
     </Maintenance>
 
+    <Maintenance id="reparaciones" color="var(--accent-blue)" subject="Mantenimiento, embalajes (web)" title="Mantenimiento y reparaciones" image={} alt="Repuestos">
+We perform preventive maintenance and repairs on all equipment.
+    </Maintenance>
 	</main>
 </Layout>
 

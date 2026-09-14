@@ -18,7 +18,9 @@ const currentLang = isEnglish ? 'en' : isJapanese ? 'ja' : 'es';
 <div class={`equipo ${style}`}>
   <h4>{title}</h4>
   <div>
+    {image &&
     <Image class="img" transition:name={alt} src={image} alt={alt} width={imgWidth ? imgWidth : "200px"} height="auto" />
+    }
     <slot/>
   </div>
   <div class="flex">

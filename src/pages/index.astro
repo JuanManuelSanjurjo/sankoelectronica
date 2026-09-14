@@ -3,11 +3,13 @@ import { Image } from 'astro:assets';
 import logosanko from '../assets/images/sanko-logo-blanco.png';
 import Layout from '../layouts/Layout.astro';
 import ButtonNav from '../components/ButtonNav.astro';
+import Adress from '../components/Adress.astro';
 
 const sections = [
   { id: 'business', name: 'Business' },
+  { id: 'adress', name: 'Adress' },
   { id: 'about', name: 'About' },
-  { id: 'partners', name: 'Partners' },
+  // { id: 'partners', name: 'Partners' },
 ];
 const tags = ['sanko', 'electronica', 'naval', 'embalajes', 'girocompas', 'mar del plata', 'autopiloto', 'radar', 'sonar','sq800', 'pesca', 'calamar'];
 ---
@@ -26,11 +28,17 @@ const tags = ['sanko', 'electronica', 'naval', 'embalajes', 'girocompas', 'mar d
       </div>
         <nav>
           <a href="/hamade" class="nav-item">Hamade</a>
-          <a href="/pesca-de-calamar" class="nav-item">Pesca de Calamar</a>
+          <a href="/pesca-de-calamar" class="nav-item">Calamar</a>
           <a href="/embalajes" class="nav-item">Embalajes</a>
           <a href="electronica-naval" class="nav-item">Electronica naval</a>
           <a href="girocompases-y-autopilotos" class="nav-item">Girocompases y autopilotos</a>
         </nav>
+    </section>
+    <section id="adress">
+      <div class="content">
+        <h1>Sanko Electrónica</h1>
+      <Adress />
+        </div>
     </section>
     <section id="about">
       <div class="content">
@@ -43,14 +51,14 @@ const tags = ['sanko', 'electronica', 'naval', 'embalajes', 'girocompas', 'mar d
         </p>
       </div>
     </section>
-    <section id="partners">
-      <div class="content">
-        <h1>Quienes confian en nosotros</h1>
-        <p class="glass">
-Thanks to our experience and long-standing tradition in the industry, at Sanko Electrónica we have built up a loyal customer base over the years that trusts our services and products. This, in turn, has led us to establish strong relationships with well-known brands, which place their trust in our representation in the market.
-        </p>
-      </div>
-    </section>
+<!--     <section id="partners"> -->
+<!--       <div class="content"> -->
+<!--         <h1>Quienes confian en nosotros</h1> -->
+<!--         <p class="glass"> -->
+<!-- Thanks to our experience and long-standing tradition in the industry, at Sanko Electrónica we have built up a loyal customer base over the years that trusts our services and products. This, in turn, has led us to establish strong relationships with well-known brands, which place their trust in our representation in the market. -->
+<!--         </p> -->
+<!--       </div> -->
+<!--     </section> -->
 	</main>
 </Layout>
 
@@ -221,23 +229,23 @@ nav:has(:nth-child(5):hover) {
 
 /* .nav-item:nth-child(1)::after { */
 /*     background-color: color-mix(in hsl, var(--black) 25%, transparent 25%); */
-/*     opacity: 1; */
+/*     opacity: 0.5; */
 /* } */
 /* .nav-item:nth-child(2)::after { */
 /*     background-color: color-mix(in hsl, var(--accent-red) 25%, transparent 25%); */
-/*     opacity: 1; */
+/*     opacity: 0.5; */
 /* } */
 /* .nav-item:nth-child(3)::after { */
 /*     background-color: color-mix(in hsl, var(--accent-green) 25%, transparent 25%); */
-/*     opacity: 1; */
+/*     opacity: 0.5; */
 /* } */
 /* .nav-item:nth-child(4)::after { */
 /*     background-color: color-mix(in hsl, var(--accent-yellow) 25%, transparent 25%); */
-/*     opacity: 1; */
+/*     opacity: 0.5; */
 /* } */
 /* .nav-item:nth-child(5)::after { */
 /*     background-color: color-mix(in hsl, var(--accent-blue) 25%, transparent 25%); */
-/*     opacity: 1; */
+/*     opacity: 0.5; */
 /* } */
 
 .nav-item:hover::after {
@@ -246,21 +254,28 @@ nav:has(:nth-child(5):hover) {
 }
 
 .nav-item:nth-child(1) {
-  background-image: url("https://assets.isu.pub/document-structure/230415154704-268967766751c96014e65ecdc9c5a61f/v1/3a5e70fd62fa4547182a427a9e0f1377.jpeg");
+  background-image: url("src/assets/images/index/hamade-index-limpio.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
 }
 .nav-item:nth-child(2) {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREz2r1FRsZroUifmCmvwDz8yjjkPjV4sJLfA&s");
+  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREz2r1FRsZroUifmCmvwDz8yjjkPjV4sJLfA&s"); */
+    background-image: url("src/assets/images/index/calamar/potero5.jpg");
 }
 .nav-item:nth-child(3) {
-  background-image: url("https://sym-naval.com/wp-content/uploads/2023/12/reparacion-naval.jpg");
+  /* background-image: url("https://sym-naval.com/wp-content/uploads/2023/12/reparacion-naval.jpg"); */
+    background-image: url("src/assets/images/index/embalajes/embalaje2.jpg");
 }
 
 .nav-item:nth-child(4) {
-  background-image: url("https://assets.isu.pub/document-structure/230415154704-268967766751c96014e65ecdc9c5a61f/v1/3a5e70fd62fa4547182a427a9e0f1377.jpeg");
+  /* background-image: url("https://assets.isu.pub/document-structure/230415154704-268967766751c96014e65ecdc9c5a61f/v1/3a5e70fd62fa4547182a427a9e0f1377.jpeg"); */
+    background-image: url("src/assets/images/index/electronica/electronica3.jpg");
 }
 
 .nav-item:nth-child(5) {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREz2r1FRsZroUifmCmvwDz8yjjkPjV4sJLfA&s");
+    background-image: url("src/assets/images/index/electronica/electronica1.jpg");
 }
 
   /* Mobile */ 

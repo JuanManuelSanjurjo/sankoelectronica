@@ -1,14 +1,16 @@
 ---
 import ButtonNav from '../../components/ButtonNav.astro';
 import Layout from '../../layouts/Layout.astro';
+import Adress from '../../components/Adress.astro';
 import { Image } from 'astro:assets';
 import logosanko from '../../assets/images/sanko-logo-blanco.png';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
 const sections = [
   { id: 'business', name: 'Business' },
+  { id: 'adress', name: 'Adress' },
   { id: 'about', name: 'About' },
-  { id: 'partners', name: 'Partners' },
+  // { id: 'partners', name: 'Partners' },
 ];
 const tags = ['sanko', 'electronics', 'naval', 'packaging', 'gyrocompass', 'mar del plata', 'autopilot', 'radar', 'sonar', 'sq800', 'fishing', 'squid'];
 
@@ -36,7 +38,7 @@ const hamadeUrl = getRelativeLocaleUrl("en", "hamade");
         <a href={hamadeUrl} class="nav-item">Hamade</a> 
         <a href={calamarUrl} class="nav-item">
           <span> Squid </span>
-          <span> fishing </span>
+          <!-- <span> fishing </span> -->
         </a>
         <a href={packagingUrl} class="nav-item">Packaging</a>
         <a href={navalUrl} class="nav-item">
@@ -49,9 +51,15 @@ const hamadeUrl = getRelativeLocaleUrl("en", "hamade");
            </a>
         </nav>
     </section>
+    <section id="adress">
+      <div class="content">
+        <h1>Sanko Electrónica</h1>
+      <Adress />
+        </div>
+    </section>
     <section id="about">
       <div class="content">
-        <h1>Sobre Nosotros</h1>
+        <h1>About Us</h1>
         <p class="glass">
           <span style="display: block;  margin-block: 0.5rem;">
             Sanko Electronica - Mar del Plata, Buenos Aires, Argentina. 
@@ -60,14 +68,14 @@ We have been in business since 1977, providing comprehensive solutions for the f
         </p>
       </div>
     </section>
-    <section id="partners">
-      <div class="content">
-        <h1>Quienes confian en nosotros</h1>
-        <p class="glass">
-Thanks to our experience and long-standing tradition in the sector, at Sanko Electrónica we have a large customer base that trusts our services and products. This, in turn, has led us to establish strong relationships with renowned brands, who rely on us to represent them in the market.
-        </p>
-      </div>
-    </section>
+<!--     <section id="partners"> -->
+<!--       <div class="content"> -->
+<!--         <h1>Quienes confian en nosotros</h1> -->
+<!--         <p class="glass"> -->
+<!-- Thanks to our experience and long-standing tradition in the sector, at Sanko Electrónica we have a large customer base that trusts our services and products. This, in turn, has led us to establish strong relationships with renowned brands, who rely on us to represent them in the market. -->
+<!--         </p> -->
+<!--       </div> -->
+<!--     </section> -->
 	</main>
 </Layout>
 
@@ -264,21 +272,28 @@ nav:has(:nth-child(5):hover) {
 }
 
 .nav-item:nth-child(1) {
-  background-image: url("https://assets.isu.pub/document-structure/230415154704-268967766751c96014e65ecdc9c5a61f/v1/3a5e70fd62fa4547182a427a9e0f1377.jpeg");
+    background-image: url("../src/assets/images/index/hamade-index-limpio.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
 }
 .nav-item:nth-child(2) {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREz2r1FRsZroUifmCmvwDz8yjjkPjV4sJLfA&s");
+  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREz2r1FRsZroUifmCmvwDz8yjjkPjV4sJLfA&s"); */
+    background-image: url("../src/assets/images/index/calamar/potero5.jpg");
 }
 .nav-item:nth-child(3) {
-  background-image: url("https://sym-naval.com/wp-content/uploads/2023/12/reparacion-naval.jpg");
+  /* background-image: url("https://sym-naval.com/wp-content/uploads/2023/12/reparacion-naval.jpg"); */
+    background-image: url("../src/assets/images/index/embalajes/embalaje2.jpg");
 }
 
 .nav-item:nth-child(4) {
-  background-image: url("https://assets.isu.pub/document-structure/230415154704-268967766751c96014e65ecdc9c5a61f/v1/3a5e70fd62fa4547182a427a9e0f1377.jpeg");
+  /* background-image: url("https://assets.isu.pub/document-structure/230415154704-268967766751c96014e65ecdc9c5a61f/v1/3a5e70fd62fa4547182a427a9e0f1377.jpeg"); */
+    background-image: url("../src/assets/images/index/electronica/electronica3.jpg");
 }
 
 .nav-item:nth-child(5) {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREz2r1FRsZroUifmCmvwDz8yjjkPjV4sJLfA&s");
+    background-image: url("../src/assets/images/index/electronica/electronica1.jpg");
 }
 
   /* Mobile */ 
